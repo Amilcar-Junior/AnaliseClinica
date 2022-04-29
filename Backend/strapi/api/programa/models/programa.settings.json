@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "programas",
+  "info": {
+    "name": "Programa",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "software": {
+      "type": "string"
+    },
+    "tipos_de_manutencao": {
+      "type": "string"
+    },
+    "data": {
+      "type": "date"
+    },
+    "custo": {
+      "type": "integer"
+    }
+  }
+}
