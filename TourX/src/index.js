@@ -2,6 +2,10 @@ import React                             from "react";
 import ReactDOM                          from "react-dom";
 import { BrowserRouter, Route, Switch }  from "react-router-dom";
 
+import { Provider } from "react-redux";
+import { ToastContainer } from 'react-toastify';
+import store from "./store";
+
 //Image LightBox
 import SimpleReactLightbox               from 'simple-react-lightbox'
 
@@ -34,8 +38,6 @@ import blogDetails                      from "./components/pages/blog/BlogDetail
 import './index.css';
 import './index.scss';
 
-//Default Warniing Error Hide
-console.log = console.warn = console.error = () => {};
 
 /*
 * Version : 0.1
@@ -77,7 +79,10 @@ class Root extends React.Component{
 ReactDOM.render(
     <React.StrictMode>
         <SimpleReactLightbox>
-            <Root />
+            <Provider store={store}>
+                <Root />
+                <ToastContainer />
+            </Provider>
         </SimpleReactLightbox>
     </React.StrictMode>,
     document.getElementById("root")
