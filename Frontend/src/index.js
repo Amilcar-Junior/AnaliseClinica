@@ -34,10 +34,20 @@ import blogStandard                     from "./components/pages/blog/BlogStanda
 import blogDetails                      from "./components/pages/blog/BlogDetails";
 
 
+import AuthPage from './containers/AuthPage';
+
+
+
 //Initializations All Css
 import './index.css';
 import './index.scss';
 
+
+import PublicRoute from './containers/PublicRouter'
+import PrivateRoute from './containers/PrivateRoute'
+import HomePage from "./components/pages/home/HomePage";
+import NotFound from "./containers/NotFound";
+import ConnectPage from './containers/ConnectPage';
 
 /*
 * Version : 0.1
@@ -51,25 +61,29 @@ class Root extends React.Component{
         return(
             <BrowserRouter basename={"/"}>
                     <Switch>
-                        <Route exact path='/' component={defaultLayout} />
-                        <Route path={`${process.env.PUBLIC_URL}/home-page-2`} component={secondLayout} />
-                        <Layout>
-                            <Route path={`${process.env.PUBLIC_URL}/about-us`} component={aboutUs} />
-                            <Route path={`${process.env.PUBLIC_URL}/destination`} component={destinations} />
-                            <Route path={`${process.env.PUBLIC_URL}/package`} component={packages} />
-                            <Route path={`${process.env.PUBLIC_URL}/package-sidebar`} component={packageSidebar} />
-                            <Route path={`${process.env.PUBLIC_URL}/package-standard`} component={packageStandard} />
-                            <Route path={`${process.env.PUBLIC_URL}/package-details`} component={packageDetails} />
-                            <Route path={`${process.env.PUBLIC_URL}/faq`} component={faq} />
-                            <Route path={`${process.env.PUBLIC_URL}/404`} component={error} />
-                            <Route path={`${process.env.PUBLIC_URL}/guide`} component={guide} />
-                            <Route path={`${process.env.PUBLIC_URL}/gallary`} component={gallary} />
-                            <Route path={`${process.env.PUBLIC_URL}/blog`} component={blog} />
-                            <Route path={`${process.env.PUBLIC_URL}/blog-sidebar`} component={blogSidebar} />
-                            <Route path={`${process.env.PUBLIC_URL}/blog-standard`} component={blogStandard} />
-                            <Route path={`${process.env.PUBLIC_URL}/blog-details`} component={blogDetails} />
-                            <Route path={`${process.env.PUBLIC_URL}/contact`} component={contact} />
-                        </Layout>
+                    <PublicRoute exact path={`${process.env.PUBLIC_URL}/`} component={HomePage} />
+                        
+                            <PublicRoute path={"/about-us"} component={aboutUs} />
+                            <PublicRoute path={"/destination"} component={destinations} />
+                            <PublicRoute path={"/package"} component={packages} />
+                            <PublicRoute path={"/package-sidebar"} component={packageSidebar} />
+                            <PublicRoute path={"/package-standard"} component={packageStandard} />
+                            <PublicRoute path={"/package-details"} component={packageDetails} />
+                            <PublicRoute path={"/faq"} component={faq} />
+                            <PublicRoute path={"/404"} component={error} />
+                            <PublicRoute path={"/guide"} component={guide} />
+                            <PublicRoute path={"/gallary"} component={gallary} />
+                            <PublicRoute path={"/blog"} component={blog} />
+                            <PublicRoute path={"/blog-sidebar"} component={blogSidebar} />
+                            <PublicRoute path={"/blog-standard"} component={blogStandard} />
+                            <PublicRoute path={"/blog-details"} component={blogDetails} />
+                            <PublicRoute path={"/contact"} component={contact} />
+                            <PublicRoute path="/auth/:authType/:id?" component={AuthPage} />
+                            <PublicRoute path="/connect/:provider" component={ConnectPage} />
+
+
+
+                            <NotFound exact path="*" component={Error} />
                     </Switch>
             </BrowserRouter>
         );
