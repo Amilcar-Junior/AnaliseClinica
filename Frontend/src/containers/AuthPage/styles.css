@@ -3,11 +3,12 @@
   justify-content: space-around;
   text-align: center;
   padding: 170px 0;
-  padding-top: 0%;
-  padding-bottom: 55%;
+  padding-top: 40px;
+  padding-bottom: 30px;
   background: #FAFAFB;
-  height: 100vh;
+  height: 80vh;
   -webkit-font-smoothing: antialiased;
+
 }
 
 .wrapper {
@@ -38,7 +39,7 @@
   width: 416px;
   text-align: center;
   margin: auto;
-  padding: 13px 30px 0 30px;
+  padding: 14px 30px 0 30px;
   line-height: 18px;
   color: #333740;
   font-size: 14px;
@@ -51,7 +52,7 @@
   margin-bottom: 0;
   padding: 33px 15px 15px 15px;
   border-radius: 2px;
-  border-top: 2px solid #FF7F47!important;
+  border-top: 2px solid #0EC69A!important;
   background-color: #FFFFFF;
   box-shadow: 0 2px 4px 0 #E3E9F3;
 }

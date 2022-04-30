@@ -143,7 +143,7 @@ class AuthPage extends React.Component {
             {this.props.match.params.authType === 'register' ? (
               <span>Bem Vindo !</span>
             ) : (
-              <h1>Entrar</h1>
+              <h1>Login</h1>
             )}
           </div>
           <div className="headerDescription">

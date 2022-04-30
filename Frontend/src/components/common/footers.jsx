@@ -207,7 +207,7 @@ class Footers extends Component {
                             <div className="col-lg-4 col-md-12">
                                 <div className="footer-info">
                                     <div className="footer-logo">
-                                        <img src={secondLogo} alt="" className="img-fluid" />
+                                        <img src={secondLogo} alt="" width="200px" className="img-fluid" />
                                     </div>
                                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid maxime aut ut voluptate
                                         dolorum nisi ducimus ratione</p>
@@ -289,7 +289,7 @@ class Footers extends Component {
                         <div className="row">
                             <div className="col-lg-12">
                                 <div className="copyrigth-area">
-                                    <p>Copyright 2021 <Link to={`#`}>SandWatch</Link> | Design By <Link to={`#`}>Ruben Correia</Link></p>
+                                    <p>Copyright 2022 <Link to={`#`}>UNICV</Link> | Devs <Link to={`#`}>Amilcar | Agda | Rinilton</Link></p>
                                 </div>
                             </div>
                         </div>

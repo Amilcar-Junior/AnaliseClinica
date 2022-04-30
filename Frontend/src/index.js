@@ -46,6 +46,7 @@ import './index.scss';
 import PublicRoute from './containers/PublicRouter'
 import PrivateRoute from './containers/PrivateRoute'
 import HomePage from "./components/pages/home/HomePage";
+import HomePage2 from "./components/pages/home/HomePage";
 import NotFound from "./containers/NotFound";
 import ConnectPage from './containers/ConnectPage';
 
@@ -63,27 +64,26 @@ class Root extends React.Component{
                     <Switch>
                     <PublicRoute exact path={`${process.env.PUBLIC_URL}/`} component={HomePage} />
                         
-                            <PublicRoute path={"/about-us"} component={aboutUs} />
-                            <PublicRoute path={"/destination"} component={destinations} />
-                            <PublicRoute path={"/package"} component={packages} />
-                            <PublicRoute path={"/package-sidebar"} component={packageSidebar} />
-                            <PublicRoute path={"/package-standard"} component={packageStandard} />
-                            <PublicRoute path={"/package-details"} component={packageDetails} />
-                            <PublicRoute path={"/faq"} component={faq} />
-                            <PublicRoute path={"/404"} component={error} />
-                            <PublicRoute path={"/guide"} component={guide} />
-                            <PublicRoute path={"/gallary"} component={gallary} />
-                            <PublicRoute path={"/blog"} component={blog} />
-                            <PublicRoute path={"/blog-sidebar"} component={blogSidebar} />
-                            <PublicRoute path={"/blog-standard"} component={blogStandard} />
-                            <PublicRoute path={"/blog-details"} component={blogDetails} />
-                            <PublicRoute path={"/contact"} component={contact} />
+                            <PublicRoute path="/about-us" component={aboutUs} />
+                            <PublicRoute path="/destination" component={destinations} />
+                            <PublicRoute path="/package" component={packages} />
+                            <PublicRoute path="/package-sidebar" component={packageSidebar} />
+                            <PublicRoute path="/package-standard" component={packageStandard} />
+                            <PublicRoute path="/package-details" component={packageDetails} />
+                            <PublicRoute path="/faq" component={faq} />
+                            <PublicRoute path="/guide" component={guide} />
+                            <PublicRoute path="/gallary" component={gallary} />
+                            <PublicRoute path="/blog" component={blog} />
+                            <PublicRoute path="/blog-sidebar" component={blogSidebar} />
+                            <PublicRoute path="/blog-standard" component={blogStandard} />
+                            <PublicRoute path="/blog-details" component={blogDetails} />
+                            <PublicRoute path="/contact" component={contact} />
                             <PublicRoute path="/auth/:authType/:id?" component={AuthPage} />
                             <PublicRoute path="/connect/:provider" component={ConnectPage} />
 
 
 
-                            <NotFound exact path="*" component={Error} />
+                            <NotFound exact path="*" component={error} />
                     </Switch>
             </BrowserRouter>
         );
