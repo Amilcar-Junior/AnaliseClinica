@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/recolhas",
+      "handler": "recolha.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/recolhas/count",
+      "handler": "recolha.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/recolhas/:id",
+      "handler": "recolha.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/recolhas",
+      "handler": "recolha.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/recolhas/:id",
+      "handler": "recolha.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/recolhas/:id",
+      "handler": "recolha.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

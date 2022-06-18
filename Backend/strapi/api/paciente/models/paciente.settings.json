@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pacientes",
+  "info": {
+    "name": "Paciente"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "endereco": {
+      "type": "string"
+    },
+    "data_nascimento": {
+      "type": "datetime"
+    },
+    "sexo": {
+      "type": "string"
+    },
+    "telefone": {
+      "type": "integer"
+    },
+    "bi": {
+      "type": "string"
+    }
+  }
+}

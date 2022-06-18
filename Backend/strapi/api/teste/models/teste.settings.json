@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "testes",
+  "info": {
+    "name": "Teste",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "idade": {
+      "type": "biginteger"
+    },
+    "data_nascimento": {
+      "type": "datetime"
+    },
+    "type": {
+      "type": "boolean"
+    }
+  }
+}

@@ -6,22 +6,21 @@ import Footers from "../common/footers";
 
 //default layout
 class MainLayout extends Component {
-
   //Inherited Parent options.
   constructor(props) {
     super(props);
-    this.state = {
-
-    };
+    this.state = {};
   }
 
   render() {
     return (
-        <>
-          <Headers/>
-              <HomePage/>
-          <Footers/>
-        </>
+      <>
+        <Headers />
+        <div className="main-admin">{this.props.children}</div>
+        <div className="footer-admin" style={{ marginTop: "10px" }}>
+          <Footers />
+        </div>
+      </>
     );
   }
 }

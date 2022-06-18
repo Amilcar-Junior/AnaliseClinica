@@ -26,12 +26,6 @@
         "type": "password",
         "placeholder": "senha"
         
-      },
-      {
-        "customBootstrapClass": "col-md-6",
-        "label": "Lembre-se de mim",
-        "name": "rememberMe",
-        "type": "checkbox"
       }
     ],
     "reset-password": [

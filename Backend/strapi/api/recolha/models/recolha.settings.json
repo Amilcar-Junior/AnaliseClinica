@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "recolhas",
+  "info": {
+    "name": "Recolha",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hematologia": {
+      "type": "boolean"
+    },
+    "heamatologia_a": {
+      "type": "boolean"
+    },
+    "hematologia_b": {
+      "type": "boolean"
+    },
+    "bioquimica_i": {
+      "type": "boolean"
+    },
+    "bioquimica_ii": {
+      "type": "boolean"
+    },
+    "bioquimica_iii": {
+      "type": "boolean"
+    },
+    "imunoserologia": {
+      "type": "boolean"
+    },
+    "urina_ii": {
+      "type": "boolean"
+    },
+    "tipo": {
+      "type": "string"
+    },
+    "data": {
+      "type": "datetime"
+    },
+    "assinatura": {
+      "type": "string"
+    },
+    "outro": {
+      "type": "string"
+    },
+    "imunoserologia_a": {
+      "type": "boolean"
+    }
+  }
+}

@@ -1,0 +1,189 @@
+{
+  "kind": "collectionType",
+  "collectionName": "resultados",
+  "info": {
+    "name": "Resultado"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hematologia_rdw_cv": {
+      "type": "integer"
+    },
+    "hematologia_eritrocitos": {
+      "type": "integer"
+    },
+    "hematologia_hemoglobina": {
+      "type": "integer"
+    },
+    "hematologia_hematocrito": {
+      "type": "integer"
+    },
+    "hematologia_vgm": {
+      "type": "integer"
+    },
+    "hematologia_hgm": {
+      "type": "integer"
+    },
+    "hematologia_chgm": {
+      "type": "integer"
+    },
+    "hematologia_paquetas": {
+      "type": "integer"
+    },
+    "hematologia_leucocitos": {
+      "type": "integer"
+    },
+    "hematologia_neutrofilos": {
+      "type": "integer"
+    },
+    "hematologia_eosinofilos": {
+      "type": "integer"
+    },
+    "hematologia_basofilos": {
+      "type": "integer"
+    },
+    "hematologia_linfocitos": {
+      "type": "integer"
+    },
+    "hematologia_monocitos": {
+      "type": "integer"
+    },
+    "hematologia_bandas": {
+      "type": "integer"
+    },
+    "hematologia_a_globulos_v": {
+      "type": "integer"
+    },
+    "hematologia_a_hemoglobina": {
+      "type": "integer"
+    },
+    "hematologia_a_hematocrito": {
+      "type": "integer"
+    },
+    "hematologia_a_vgm": {
+      "type": "integer"
+    },
+    "hematologia_a_hgm": {
+      "type": "integer"
+    },
+    "hematologia_a_chgm": {
+      "type": "integer"
+    },
+    "hematologia_a_globulos_b": {
+      "type": "integer"
+    },
+    "hematologia_a_neutrofilos": {
+      "type": "integer"
+    },
+    "hematologia_a_eosinofilos": {
+      "type": "integer"
+    },
+    "hematologia_a_basofilos": {
+      "type": "integer"
+    },
+    "hematologia_a_linfocitos": {
+      "type": "integer"
+    },
+    "hematologia_a_monocitos": {
+      "type": "integer"
+    },
+    "hematologia_a_bandas": {
+      "type": "integer"
+    },
+    "hematologia_a_paquetas": {
+      "type": "integer"
+    },
+    "hematologia_b_tp": {
+      "type": "integer"
+    },
+    "hematologia_b_inr": {
+      "type": "integer"
+    },
+    "hematologia_b_pesq": {
+      "type": "integer"
+    },
+    "bioquimica_i_glicose": {
+      "type": "integer"
+    },
+    "bioquimica_i_ureia": {
+      "type": "integer"
+    },
+    "bioquimica_i_acido_u": {
+      "type": "integer"
+    },
+    "bioquimica_i_creatinina": {
+      "type": "integer"
+    },
+    "bioquimica_i_got": {
+      "type": "integer"
+    },
+    "bioquimica_i_gpt": {
+      "type": "integer"
+    },
+    "bioquimica_ii_ldh": {
+      "type": "integer"
+    },
+    "bioquimica_ii_cpk": {
+      "type": "integer"
+    },
+    "bioquimica_ii_ck_mb": {
+      "type": "integer"
+    },
+    "bioquimica_ii_troponina_i": {
+      "type": "integer"
+    },
+    "bioquimica_iii_sodio": {
+      "type": "integer"
+    },
+    "bioquimica_iii_potassio": {
+      "type": "integer"
+    },
+    "imunoserologia_vdrl": {
+      "type": "string"
+    },
+    "imunoserologia_widal": {
+      "type": "string"
+    },
+    "imunoserologia_a_pcr": {
+      "type": "integer"
+    },
+    "urina_ii_glicosuria": {
+      "type": "integer"
+    },
+    "urina_ii_proteinuria": {
+      "type": "integer"
+    },
+    "urina_ii_cetonuria": {
+      "type": "integer"
+    },
+    "urina_ii_sangue": {
+      "type": "integer"
+    },
+    "urina_ii_nitrito": {
+      "type": "integer"
+    },
+    "urina_ii_ph": {
+      "type": "integer"
+    },
+    "urina_ii_densidade": {
+      "type": "integer"
+    },
+    "urina_ii_celulas": {
+      "type": "integer"
+    },
+    "urina_ii_leucocitos": {
+      "type": "integer"
+    },
+    "urina_ii_eritrocitos": {
+      "type": "integer"
+    },
+    "observacao": {
+      "type": "text"
+    }
+  }
+}

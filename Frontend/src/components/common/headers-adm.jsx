@@ -98,7 +98,7 @@ class Headers extends Component {
                             </li>
                             <li className="account-el">
                               <i className="bx bxs-user-account" />
-                              <Link to={"#"}>My Account</Link>
+                              <Link to={`${process.env.PUBLIC_URL}/list-user-profile`} >Perfil</Link>
                             </li>
                             <li className="account-el">
                               <i className="bx bx-extension" />
@@ -162,15 +162,42 @@ class Headers extends Component {
                           </li>
                         </ul>
                       </li>
+                      <li className="has-child-menu">
+                        <Link to={"#"}>Health</Link>
+                        <i className="fl flaticon-plus">+</i>
+                        <ul className="sub-menu">
+                          <li>
+                            <NavLink
+                              activeClassName="active"
+                              to={`${process.env.PUBLIC_URL}/list-utilizadores`}
+                              className="sub-item"
+                              onClick={this.scrollTop}
+                            >
+                              Utilizadores
+                            </NavLink>
+                          </li>
+                          <li>
+                            <NavLink
+                              activeClassName="active"
+                              to={`${process.env.PUBLIC_URL}/home-page-2`}
+                              className="sub-item"
+                              onClick={this.scrollTop}
+                            >
+                              Pacientes
+                            </NavLink>
+                          </li>
+                        </ul>
+                      </li>
                       <li>
                         <NavLink
                           activeClassName="active"
-                          to={`${process.env.PUBLIC_URL}/about-us`}
+                          to={`${process.env.PUBLIC_URL}/list-teste`}
                           onClick={this.scrollTop}
                         >
-                          Sobre Nos
+                          Teste
                         </NavLink>
                       </li>
+
                       
                     </ul>
                     <div className="navbar-icons-2">
@@ -189,7 +216,7 @@ class Headers extends Component {
                             </li>
                             <li className="account-el">
                               <i className="bx bxs-user-account" />
-                              <Link to={`#`}>My Account</Link>
+                              <Link to={`${process.env.PUBLIC_URL}/list-user-profile`} >Perfil</Link>
                             </li>
                             <li className="account-el">
                               <i className="bx bx-extension" />

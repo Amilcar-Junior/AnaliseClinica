@@ -13,10 +13,11 @@
   padding-left: 25px;
   line-height: 12px;
 
-  small {
-    color: #9EA7B8;
-    font-size: 12px;
-  }
+  
+}
+small {
+  color: #9EA7B8;
+  font-size: 12px;
 }
 
 .inputTitle {

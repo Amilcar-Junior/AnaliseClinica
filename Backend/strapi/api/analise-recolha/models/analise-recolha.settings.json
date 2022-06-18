@@ -1,0 +1,183 @@
+{
+  "kind": "collectionType",
+  "collectionName": "analise_recolhas",
+  "info": {
+    "name": "AnaliseRecolha"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tipo": {
+      "type": "string"
+    },
+    "data": {
+      "type": "datetime"
+    },
+    "outro": {
+      "type": "string"
+    },
+    "assinatura": {
+      "type": "string"
+    },
+    "hemograma_completo": {
+      "type": "boolean"
+    },
+    "hemoglobina": {
+      "type": "boolean"
+    },
+    "hematocriot": {
+      "type": "boolean"
+    },
+    "urela": {
+      "type": "boolean"
+    },
+    "creatinina": {
+      "type": "boolean"
+    },
+    "aci_urico": {
+      "type": "boolean"
+    },
+    "got": {
+      "type": "boolean"
+    },
+    "gpt": {
+      "type": "boolean"
+    },
+    "bb_total": {
+      "type": "boolean"
+    },
+    "bb_directa": {
+      "type": "boolean"
+    },
+    "proteina_total": {
+      "type": "boolean"
+    },
+    "vsg": {
+      "type": "boolean"
+    },
+    "prc": {
+      "type": "boolean"
+    },
+    "widal": {
+      "type": "boolean"
+    },
+    "fr": {
+      "type": "boolean"
+    },
+    "taso": {
+      "type": "boolean"
+    },
+    "vdrl": {
+      "type": "boolean"
+    },
+    "aghbs": {
+      "type": "boolean"
+    },
+    "anti_hcv": {
+      "type": "boolean"
+    },
+    "trigliceridos": {
+      "type": "boolean"
+    },
+    "colest_total": {
+      "type": "boolean"
+    },
+    "hdl": {
+      "type": "boolean"
+    },
+    "ldl": {
+      "type": "boolean"
+    },
+    "hb1ac": {
+      "type": "boolean"
+    },
+    "glicemia": {
+      "type": "boolean"
+    },
+    "ptg": {
+      "type": "boolean"
+    },
+    "amilase": {
+      "type": "boolean"
+    },
+    "ggt": {
+      "type": "boolean"
+    },
+    "fa": {
+      "type": "boolean"
+    },
+    "sodio": {
+      "type": "boolean"
+    },
+    "calcio": {
+      "type": "boolean"
+    },
+    "fosforo": {
+      "type": "boolean"
+    },
+    "gota_espessa": {
+      "type": "boolean"
+    },
+    "dengue_igm": {
+      "type": "boolean"
+    },
+    "denge_igg": {
+      "type": "boolean"
+    },
+    "tempo_coag": {
+      "type": "boolean"
+    },
+    "tempo_sang": {
+      "type": "boolean"
+    },
+    "tempo_protombina": {
+      "type": "boolean"
+    },
+    "grupo_sang": {
+      "type": "boolean"
+    },
+    "psa_total": {
+      "type": "boolean"
+    },
+    "tsh": {
+      "type": "boolean"
+    },
+    "t3": {
+      "type": "boolean"
+    },
+    "t4": {
+      "type": "boolean"
+    },
+    "baciloscopia": {
+      "type": "boolean"
+    },
+    "ex_vaginal": {
+      "type": "boolean"
+    },
+    "urina_ii": {
+      "type": "boolean"
+    },
+    "ex_fezes": {
+      "type": "boolean"
+    },
+    "hiv": {
+      "type": "boolean"
+    },
+    "toxoplasmose": {
+      "type": "boolean"
+    },
+    "rubeola_igg": {
+      "type": "boolean"
+    },
+    "rubeola_igm": {
+      "type": "boolean"
+    },
+    "citomegalovirus": {
+      "type": "boolean"
+    }
+  }
+}
