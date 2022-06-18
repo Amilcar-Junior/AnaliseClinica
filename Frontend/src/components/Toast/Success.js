@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify"
-
+import 'react-toastify/dist/ReactToastify.css';
 
 const Success = () => {
     const {message } = useSelector(state => state.toastify);

@@ -24,7 +24,6 @@ class UtilizadoresList extends Component {
     };
   }
 
-
   handleSetItens(itens) {
     this.setState({ currentItens: itens });
   }
@@ -42,8 +41,8 @@ class UtilizadoresList extends Component {
   render() {
     const { currentItens } = this.state;
     const { utilizadores } = this.props;
-    console.log(utilizadores)
-    console.log(currentItens)
+    console.log(utilizadores);
+    console.log(currentItens);
     return (
       <>
         <div className="container">
@@ -72,7 +71,6 @@ class UtilizadoresList extends Component {
                     fileName="Utilizadores"
                   />
                 </div>
-              
               </div>
               <div className="row">
                 {utilizadores.length ? (
@@ -91,10 +89,7 @@ class UtilizadoresList extends Component {
                             </th>
 
                             <th scope="col" className="text-center">
-                              Primeiro Nome
-                            </th>
-                            <th scope="col" className="text-center">
-                              Segundo Nome
+                              Nome
                             </th>
 
                             <th scope="col" className="text-center">
@@ -107,6 +102,10 @@ class UtilizadoresList extends Component {
 
                             <th scope="col" className="text-center">
                               Cargo
+                            </th>
+
+                            <th scope="col" className="text-center">
+                              Especialidade
                             </th>
 
                             <th className="text-center" colSpan="2" scope="col">
@@ -127,7 +126,7 @@ class UtilizadoresList extends Component {
                                   email,
                                   telefone,
                                   role,
-                                  
+                                  especialidade,
                                 },
                                 i
                               ) => (
@@ -135,9 +134,9 @@ class UtilizadoresList extends Component {
                                   <td>{i + 1}</td>
                                   <td>{username}</td>
 
-                                  <td>{name}</td>
-
-                                  <td>{last_name}</td>
+                                  <td>
+                                    {name} {last_name}
+                                  </td>
 
                                   <td>{email}</td>
 
@@ -145,7 +144,7 @@ class UtilizadoresList extends Component {
 
                                   <td>{role && role.name}</td>
 
-                                  
+                                  <td>{especialidade}</td>
 
                                   <td className="table-action-col">
                                     <div className="row g-1">
@@ -188,7 +187,6 @@ class UtilizadoresList extends Component {
           </div>
         </div>
         <div className="end" />
-        
       </>
     );
   }
