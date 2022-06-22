@@ -1,4 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
+import logReducer from "./conection/logs/reducers";
 import pacienteReducer from "./conection/pacientes/reducers";
 import profileReducer from "./conection/profile/reducers";
 import testeReducer from "./conection/testes/reducers";
@@ -12,7 +13,9 @@ export default configureStore({
    users: profileReducer,
    testes: testeReducer,
    utilizadores: utilizadorReducer,
-   profile: profileReducer
+   profile: profileReducer,
+   logs: logReducer
+   
  },
 
 });
