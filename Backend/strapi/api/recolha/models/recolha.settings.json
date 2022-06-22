@@ -50,6 +50,10 @@
     },
     "imunoserologia_a": {
       "type": "boolean"
+    },
+    "paciente": {
+      "model": "paciente",
+      "via": "recolhas"
     }
   }
 }

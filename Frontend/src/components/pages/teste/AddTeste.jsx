@@ -189,7 +189,7 @@ class AddTeste extends Component {
 
                       <div className="col-lg-12">
                         <div className="center">
-                          <Link onClick={this.saveLog} className="btn-second">
+                          <Link onClick={this.saveTeste} className="btn-second">
                             Adicionar
                           </Link>
                         </div>

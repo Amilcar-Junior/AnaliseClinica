@@ -28,6 +28,14 @@
     },
     "bi": {
       "type": "string"
+    },
+    "recolhas": {
+      "via": "paciente",
+      "collection": "recolha"
+    },
+    "resultados": {
+      "via": "paciente",
+      "collection": "resultado"
     }
   }
 }

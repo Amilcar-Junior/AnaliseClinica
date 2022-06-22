@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import { updateTeste } from "../../../conection/testes/actions";
+import { createLog } from "../../../conection/logs/actions";
+import { retrieveProfile } from "../../../conection/profile/actions";
 
 import { Redirect, Link } from "react-router-dom";
 
@@ -18,6 +20,7 @@ class EditTeste extends Component {
         this.onChangeData_nascimento = this.onChangeData_nascimento.bind(this);
         this.onChangeType = this.onChangeType.bind(this);
         this.saveTeste = this.saveTeste.bind(this);
+        this.saveLog = this.saveLog.bind(this);
 
         this.state = {
             
@@ -29,10 +32,22 @@ class EditTeste extends Component {
             },
             
             redirect: false,
+            user: null,
         };
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        if (prevProps.user !== this.props.user) {
+          this.setState({ user: this.props.user });
+          console.log(this.props.user);
+        }
+      }
+    
+
+
+      
     componentDidMount() {
+        this.props.retrieveProfile();
         this.getTeste(window.location.pathname.replace("/edit-teste/", ""));
     }
 
@@ -123,14 +138,29 @@ class EditTeste extends Component {
                 this.state.currentTeste.id,
                 this.state.currentTeste
             )
+            
 
             .then(() => {
                 this.setState({
                     redirect: true,
                 });
             });
+            this.saveLog()
         console.log(this.state.currentTeste)
     }
+
+    async saveLog() {
+        const data = new Date();
+        //+1 dia porque o strapi remove 1 dia bug da verção do strapi
+        data.setDate(data.getDate() + 1);
+        const tipo = "Atualizar teste";
+        const user = this.state.user.name;
+        console.log(this.state);
+    
+        this.props
+          .createLog(data, tipo, user)
+          .catch((err) => console.log(err.response));
+      }
 
     render() {
         const { redirect, currentTeste } = this.state;
@@ -257,4 +287,9 @@ class EditTeste extends Component {
     }
 }
 
-export default connect(null, { updateTeste })(EditTeste);
+const mapStateToProps = (state) => ({
+    user: state.users,
+  });
+
+export default connect(mapStateToProps, { updateTeste, createLog,
+    retrieveProfile,})(EditTeste);

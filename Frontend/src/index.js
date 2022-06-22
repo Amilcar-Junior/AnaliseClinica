@@ -54,6 +54,9 @@ import AddUtilizador from "./components/pages/utilizadores/AddUtilizador";
 import EditUtilizador from "./components/pages/utilizadores/EditUtilizador";
 import ProfileList from "./components/pages/profile/profileList";
 import EditProfile from "./components/pages/profile/EditProfile";
+import ListPaciente from "./components/pages/paciente/ListPaciente";
+import AddPaciente from "./components/pages/paciente/AddPaciente";
+import EditPaciente from "./components/pages/paciente/EditPaciente";
 /*
  * Version : 0.1
  * Event : Rendering all content to web.
@@ -89,12 +92,13 @@ class Root extends React.Component {
           <PublicRoute path="/auth/:authType/:id?" component={AuthPage} />
           <PublicRoute path="/connect/:provider" component={ConnectPage} />
 
-          <PrivateRoute
-            path="/list-utilizadores"
-            component={UtilizadoresList}
-          />
+          <PrivateRoute path="/list-utilizadores" component={UtilizadoresList}/>
           <PrivateRoute path="/add-utilizadores" component={AddUtilizador} />
           <PrivateRoute path="/edit-utilizador" component={EditUtilizador} />
+
+          <PrivateRoute path="/list-paciente" component={ListPaciente} />
+          <PrivateRoute path="/add-paciente" component={AddPaciente} />
+          <PrivateRoute path="/edit-paciente" component={EditPaciente} />
 
           <PrivateRoute path="/list-teste" component={ListTeste} />
           <PrivateRoute path="/add-teste" component={AddTeste} />

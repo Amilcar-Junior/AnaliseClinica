@@ -15,13 +15,13 @@ import PacientesService from "./pacientesService";
 
 export const createPaciente =
 
-    (bi, nome, data_nascimento, morada, contacto) => async (dispatch) => {
+    (bi, name, data_nascimento, endereco, sexo,telefone) => async (dispatch) => {
 
         try {
 
             const res = await PacientesService.create({
 
-                bi, nome, data_nascimento, morada, contacto
+                bi, name, data_nascimento, endereco, sexo, telefone,
 
             });
 
@@ -113,9 +113,9 @@ export const deletePaciente = (id) => async (dispatch) => {
 
     } catch (err) {
 
-        toast.error('Paciente não foi Deletado!')
+        toast.error('Paciente não foi Deletado!', {position: toast.POSITION.TOP_LEFT})
         console.log(err);
-
+        alert("Eu sou um alert!");
     }
 
 };
