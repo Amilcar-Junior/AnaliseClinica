@@ -109,7 +109,7 @@ class AddPaciente extends Component {
     //+1 dia porque o strapi remove 1 dia bug da verção do strapi
     data.setDate(data.getDate() + 1);
     const tipo = "adicionar paciente";
-    const user = this.state.user.name;
+    const user = this.state.user.id;
     console.log(this.state);
 
     this.props
@@ -164,7 +164,7 @@ class AddPaciente extends Component {
                         </h6>
 
                         <input
-                          maxlength="30"
+                          maxlength="10"
                           type="text"
                           className="form-control"
                           id="bi"

@@ -16,6 +16,7 @@ class EditUtilizador extends Component {
 
     this.onChangeUsername = this.onChangeUsername.bind(this);
     this.onChangeEmail = this.onChangeEmail.bind(this);
+    this.onChangeEspecialidade = this.onChangeEspecialidade.bind(this);
     this.onChangePassword = this.onChangePassword.bind(this);
     this.onChangeConfirmed = this.onChangeConfirmed.bind(this);
     this.onChangeBlocked = this.onChangeBlocked.bind(this);
@@ -36,10 +37,8 @@ class EditUtilizador extends Component {
         blocked: false,
 
         role: "",
-
-        gruposand: "",
-
-        id: "",
+        
+        especialidade: "",
 
         selectOptionsRole: [],
         name: "",
@@ -107,6 +106,18 @@ class EditUtilizador extends Component {
         currentUtilizador: {
           ...prevState.currentUtilizador,
           email: email,
+        },
+      };
+    });
+  }
+  onChangeEspecialidade(e) {
+    const especialidade = e.target.value;
+
+    this.setState(function (prevState) {
+      return {
+        currentUtilizador: {
+          ...prevState.currentUtilizador,
+          especialidade: especialidade,
         },
       };
     });
@@ -246,6 +257,20 @@ class EditUtilizador extends Component {
                           />
                         </div>
 
+                        <div className="col-lg-12">
+                          <label className="form-label" htmlFor="especialidade">
+                            Especialidade{" "}
+                          </label>
+                          <input
+                            type="text"
+                            className="form-control"
+                            id="especialidade"
+                            
+                            value={currentUtilizador.especialidade}
+                            onChange={this.onChangeEspecialidade}
+                            name="text"
+                          />
+                        </div>
                         
                         <div className="col-lg-6">
                           <label className="form-label" htmlFor="role">

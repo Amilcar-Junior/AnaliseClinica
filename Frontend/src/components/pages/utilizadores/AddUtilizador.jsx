@@ -15,6 +15,7 @@ class AddUtilizador extends Component {
 
     this.onChangeUsername = this.onChangeUsername.bind(this);
     this.onChangeEmail = this.onChangeEmail.bind(this);
+    this.onChangeEspecialidade = this.onChangeEspecialidade.bind(this);
     this.onChangePassword = this.onChangePassword.bind(this);
     this.onChangeConfirmed = this.onChangeConfirmed.bind(this);
     this.onChangeBlocked = this.onChangeBlocked.bind(this);
@@ -84,6 +85,13 @@ class AddUtilizador extends Component {
     this.setState({
       email: e.target.value,
     });
+  }
+
+  onChangeEspecialidade(e) {
+    this.setState({
+      especialidade: e.target.value,
+    });
+    console.log(this.state.especialidade)
   }
 
   onChangePassword(e) {
@@ -224,9 +232,23 @@ class AddUtilizador extends Component {
                           />
                         </div>
 
-                        
+                        <div className="col-lg-12">
+                          <label className="form-label" htmlFor="especialidade">
+                            Especialidade <strong style={{ color: "red" }}>*</strong>
+                          </label>
 
-                        <div className="col-lg-6">
+                          <input
+                            type="text"
+                            className="form-control"
+                            id="especialidade"
+                            
+                            value={this.state.especialidade}
+                            onChange={this.onChangeEspecialidade}
+                            name="especialidade"
+                          />
+                        </div>
+
+                        <div className="col-lg-12">
                           <label className="form-label" htmlFor="role">
                             Cargo <strong style={{ color: "red" }}>*</strong>
                           </label>

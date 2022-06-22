@@ -23,7 +23,8 @@ export const createRecolha =
     data,
     assinatura,
     outro,
-    paciente
+    paciente,
+    dados_clinicos
   ) =>
   async (dispatch) => {
     try {
@@ -41,7 +42,8 @@ export const createRecolha =
         data,
         assinatura,
         outro,
-        paciente
+        paciente,
+        dados_clinicos
       });
 
       dispatch({

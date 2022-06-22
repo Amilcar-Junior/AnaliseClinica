@@ -82,7 +82,7 @@ class ListPaciente extends Component {
 
               </div>
             
-              <div className="end" />
+              <br/>
               {pacientes.length ? (
                   <PaginatedItems
                     setCurrentItems={this.handleSetItens}

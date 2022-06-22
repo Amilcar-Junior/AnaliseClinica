@@ -54,6 +54,9 @@
     "paciente": {
       "model": "paciente",
       "via": "recolhas"
+    },
+    "dados_clinicos": {
+      "type": "string"
     }
   }
 }

@@ -25,7 +25,7 @@ const PublicRoute = ({ component: Component, ...rest }) => (
       ) : (
         <Redirect
           to={{
-            pathname: '/home-page-adm',
+            pathname: '/dashboard',
             state: { from: props.location },
           }}
         />

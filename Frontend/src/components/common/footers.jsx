@@ -209,10 +209,9 @@ class Footers extends Component {
                                     <div className="footer-logo">
                                         <img src={secondLogo} alt="" width="200px" className="img-fluid" />
                                     </div>
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid maxime aut ut voluptate
-                                        dolorum nisi ducimus ratione</p>
+                                    <p>Uma solução integrada e completa para as necessidades da gestão da saúde de municípios, clínicas, hospitais, unidades básicas e outras unidades de saúde</p>
                                     <div className="footer-social-icons">
-                                        <h5>Follow Us:</h5>
+                                        <h5>Siga-nos:</h5>
                                         <ul>
                                             <li>
                                                 <Link to={"#"}><i className="bx bxl-facebook" /></Link>

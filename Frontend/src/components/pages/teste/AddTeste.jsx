@@ -87,7 +87,7 @@ class AddTeste extends Component {
     //+1 dia porque o strapi remove 1 dia bug da verção do strapi
     data.setDate(data.getDate() + 1);
     const tipo = "adicionar teste";
-    const user = this.state.user.name;
+    const user = this.state.user.id;
     console.log(this.state);
 
     this.props

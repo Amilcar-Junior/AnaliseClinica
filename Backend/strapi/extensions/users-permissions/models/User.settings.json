@@ -77,6 +77,13 @@
     },
     "telefone": {
       "type": "integer"
+    },
+    "logs": {
+      "via": "user",
+      "collection": "log"
+    },
+    "especialidade": {
+      "type": "string"
     }
   }
 }

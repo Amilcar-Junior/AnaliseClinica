@@ -31,7 +31,7 @@ class Headers extends Component {
 
                     <li>
                       <i className="bx bxs-envelope" />
-                      <a href="mailto:info@example.com">info@example.com</a>
+                      <a href="mailto:info@example.com">health@health.cv</a>
                     </li>
                   </ul>
                 </div>
@@ -92,18 +92,12 @@ class Headers extends Component {
                         <i className="flaticon-user" />
                         <div className="account-dropdown">
                           <ul>
-                            <li className="account-el">
-                              <i className="bx bx-user-pin" />
-                              <Link to={"#"}>Sign in</Link>
-                            </li>
+                            
                             <li className="account-el">
                               <i className="bx bxs-user-account" />
                               <Link to={`${process.env.PUBLIC_URL}/list-user-profile`} >Perfil</Link>
                             </li>
-                            <li className="account-el">
-                              <i className="bx bx-extension" />
-                              <Link to={"#"}>Settings</Link>
-                            </li>
+                            
                             <li className="account-el">
                               <Link
                                 to={"/"}
@@ -136,31 +130,14 @@ class Headers extends Component {
                       <img src={secondLogo} alt="" className="img-fluid" />
                     </div>
                     <ul>
-                      <li className="has-child-menu">
-                        <Link to={"#"}>Pragina Inicial</Link>
-                        <i className="fl flaticon-plus">+</i>
-                        <ul className="sub-menu">
-                          <li>
-                            <NavLink
-                              activeClassName="active"
-                              to={`${process.env.PUBLIC_URL}/`}
-                              className="sub-item"
-                              onClick={this.scrollTop}
-                            >
-                              Home Page 1
-                            </NavLink>
-                          </li>
-                          <li>
-                            <NavLink
-                              activeClassName="active"
-                              to={`${process.env.PUBLIC_URL}/home-page-2`}
-                              className="sub-item"
-                              onClick={this.scrollTop}
-                            >
-                              Home Page 2
-                            </NavLink>
-                          </li>
-                        </ul>
+                    <li>
+                        <NavLink
+                          activeClassName="active"
+                          to={`${process.env.PUBLIC_URL}/`}
+                          onClick={this.scrollTop}
+                        >
+                          Dashboard
+                        </NavLink>
                       </li>
                       <li className="has-child-menu">
                         <Link to={"#"}>Health</Link>
@@ -188,6 +165,32 @@ class Headers extends Component {
                           </li>
                         </ul>
                       </li>
+                      <li className="has-child-menu">
+                        <Link to={"#"}>Análise</Link>
+                        <i className="fl flaticon-plus">+</i>
+                        <ul className="sub-menu">
+                          <li>
+                            <NavLink
+                              activeClassName="active"
+                              to={`${process.env.PUBLIC_URL}/list-recolha`}
+                              className="sub-item"
+                              onClick={this.scrollTop}
+                            >
+                              Recolha
+                            </NavLink>
+                          </li>
+                          <li>
+                            <NavLink
+                              activeClassName="active"
+                              to={`${process.env.PUBLIC_URL}/list-resultado`}
+                              className="sub-item"
+                              onClick={this.scrollTop}
+                            >
+                              Resultado
+                            </NavLink>
+                          </li>
+                        </ul>
+                      </li>
                       <li>
                         <NavLink
                           activeClassName="active"
@@ -197,7 +200,7 @@ class Headers extends Component {
                           Teste
                         </NavLink>
                       </li>
-
+                      
                       
                     </ul>
                     <div className="navbar-icons-2">
@@ -208,20 +211,12 @@ class Headers extends Component {
                         <i className="flaticon-user" />
                         <div className="account-dropdown">
                           <ul>
-                            <li className="account-el">
-                              <i className="bx bx-user-pin" />
-                              <Link to={`${process.env.PUBLIC_URL}/auth/login`}>
-                                Sign in
-                              </Link>
-                            </li>
+                            
                             <li className="account-el">
                               <i className="bx bxs-user-account" />
                               <Link to={`${process.env.PUBLIC_URL}/list-user-profile`} >Perfil</Link>
                             </li>
-                            <li className="account-el">
-                              <i className="bx bx-extension" />
-                              <Link to={`#`}>Settings</Link>
-                            </li>
+                            
                             <li className="account-el">
                               <Link
                                 to={"/"}

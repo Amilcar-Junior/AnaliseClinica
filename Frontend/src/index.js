@@ -57,6 +57,8 @@ import EditProfile from "./components/pages/profile/EditProfile";
 import ListPaciente from "./components/pages/paciente/ListPaciente";
 import AddPaciente from "./components/pages/paciente/AddPaciente";
 import EditPaciente from "./components/pages/paciente/EditPaciente";
+import ListRecolha from "./components/pages/recolha/ListRecolha";
+import AddRecolha from "./components/pages/recolha/AddRecolha";
 /*
  * Version : 0.1
  * Event : Rendering all content to web.
@@ -99,6 +101,10 @@ class Root extends React.Component {
           <PrivateRoute path="/list-paciente" component={ListPaciente} />
           <PrivateRoute path="/add-paciente" component={AddPaciente} />
           <PrivateRoute path="/edit-paciente" component={EditPaciente} />
+          
+          <PrivateRoute path="/list-recolha" component={ListRecolha} />
+           <PrivateRoute path="/add-recolha" component={AddRecolha} />
+          {/*<PrivateRoute path="/edit-paciente" component={EditPaciente} /> */}
 
           <PrivateRoute path="/list-teste" component={ListTeste} />
           <PrivateRoute path="/add-teste" component={AddTeste} />

@@ -16,9 +16,9 @@ class Error extends Component {
                         <div className="error-img">
                             <img src={erro1Img} alt="" className="img-fluid" />
                         </div>
-                        <h2>That Page is Not Found.</h2>
+                        <h2>Essa página não foi encontrada.</h2>
                         <div className="error-btn">
-                            <Link to={`${process.env.PUBLIC_URL}/`}>GO TO HOME</Link>
+                            <Link to={`${process.env.PUBLIC_URL}/`}>Volte a Pagina inicial</Link>
                         </div>
                     </div>
                 </div>
