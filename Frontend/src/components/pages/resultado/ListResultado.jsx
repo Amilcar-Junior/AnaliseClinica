@@ -5,17 +5,16 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
 import {
-  retrieveRecolhas,
-  deleteRecolha,
-} from "../../../conection/recolhas/actions";
+  retrieveResultados,
+  deleteResultado,
+} from "../../../conection/resultados/actions";
 
 import { ExportCSV } from "../../ExportEx/ExportCSV";
 
 import moment from "moment";
-
 import PaginatedItems from "../../pagination/Paginate";
 
-class ListRecolha extends Component {
+class ListResultado extends Component {
   constructor(props) {
     super(props);
     this.handleSetItens = this.handleSetItens.bind(this);
@@ -30,12 +29,12 @@ class ListRecolha extends Component {
   }
 
   componentDidMount() {
-    this.props.retrieveRecolhas();
+    this.props.retrieveResultados();
   }
 
-  removeRecolha = (id) => {
-    this.props.deleteRecolha(id).then(() => {
-      this.props.retrieveRecolhas();
+  removeResultado = (id) => {
+    this.props.deleteResultado(id).then(() => {
+      this.props.retrieveResultados();
 
       // this.handleModalOpen();
     });
@@ -43,8 +42,8 @@ class ListRecolha extends Component {
 
   render() {
     const { currentItens } = this.state;
-    const { recolhas } = this.props;
-    console.log(recolhas);
+    const { resultados } = this.props;
+    console.log(resultados);
     return (
       <>
         <div className="container">
@@ -60,38 +59,45 @@ class ListRecolha extends Component {
             </div>
             <div className="end" />
             <div className="col-lg-12">
-              <h3 style={{ color: "#0EC69A" }}>
-                Lista de Recolhas de Análises
-              </h3>
+              <h3 style={{ color: "#0EC69A" }}>Lista de Resultados</h3>
 
               <div className="row mt-4">
                 <div className="col-lg-4">
-                  <Link to="/add-recolha" className="btn btn-success">
+                  <Link to="/add-resultado" className="btn btn-success">
                     <i class="fas fa-plus" /> Adicionar
                   </Link>
                 </div>
-                <div className="col-lg-4 center">
-                  <ExportCSV csvData={this.props.recolhas} fileName="Recolha" />
+                <div className="col-lg-4"/>
+                <div className="col-lg-4 float-right">
+                  <ExportCSV
+                    csvData={this.props.resultados}
+                    fileName="Resultado"
+                  />
                 </div>
               </div>
 
               <div className="end" />
-              {recolhas.length ? (
+              {resultados.length ? (
                 <PaginatedItems
                   setCurrentItems={this.handleSetItens}
                   itemsPerPage={8}
-                  items={recolhas}
+                  items={resultados}
                 >
                   <div className="table-responsive">
                     <table className="table table-striped">
                       <thead>
                         <tr>
                           <th>#</th>
-                          <th>paciente</th>
-                          <th>Data Registro</th>
-                          <th>tipo</th>
-                          <th>assinatura</th>
-                          <th>outro</th>
+
+                          <th>ID</th>
+
+                          <th>Data</th>
+
+                          <th>Recolha ID</th>
+
+                          <th>Nome Paciente</th>
+                          <th>Observação</th>
+
                           <th className="text-center">Actions</th>
                         </tr>
                       </thead>
@@ -100,48 +106,54 @@ class ListRecolha extends Component {
                         {currentItens &&
                           currentItens.map(
                             (
-                              { id, paciente, data, tipo, assinatura, outro },
+                              { id, observacao, data,paciente, recolha },
                               i
                             ) => (
                               <tr key={i}>
                                 <td>{i + 1}</td>
 
-                                <td>{paciente.name}</td>
+                                <td>{id}</td>
 
                                 <td>{moment(data).format("DD-MM-YYYY")}</td>
-
-                                <td>{tipo}</td>
-
-                                <td>{assinatura}</td>
-
-                                <td>{outro}</td>
+                                <td>{recolha && recolha.id}</td>
+                                <td>{paciente && paciente.name}</td>
+                                <td>{observacao}</td>
 
                                 <td className="table-action-col">
                                   <div className="row g-1">
                                     <div className="col-xs-6 col-md-4 text-center">
                                       <Link
-                                        to={`/ver-recolha/${id}`}
+                                        to={`/ver-resultado/${id}`}
                                         className="btn btn-success btn-sm"
                                       >
                                         <i className="fas fa-plus"></i> Ver
                                       </Link>
                                     </div>
+                                    <div className="col-xs-12 col-md-4 text-center">
+                                      <Link
+                                        className="btn btn-danger btn-sm me-2"
+                                        onClick={() => this.removeResultado(id)}
+                                      >
+                                        <i className="fas fa-trash" /> Eliminar
+                                      </Link>
+                                    </div>
+
                                     <div className="col-xs-6 col-md-4 text-center">
                                       <Link
-                                        to={`/edit-recolha/${id}`}
+                                        to={`/add-resultado/`}
                                         className="btn btn-primary btn-sm"
                                       >
                                         <i className="fas fa-edit" /> Editar
                                       </Link>
                                     </div>
-                                    <div className="col-xs-6 col-md-4 text-center">
+                                    {/* <div className="col-xs-6 col-md-4 text-center">
                                       <Link
-                                        className="btn btn-danger btn-sm me-2"
-                                        onClick={() => this.removeRecolha(id)}
+                                        to={`/edit-resultado/${id}`}
+                                        className="btn btn-primary btn-sm"
                                       >
-                                        <i className="fas fa-trash" /> Eliminar
+                                        <i className="fas fa-edit" /> Editar
                                       </Link>
-                                    </div>
+                                    </div> */}
                                   </div>
                                 </td>
                               </tr>
@@ -152,7 +164,7 @@ class ListRecolha extends Component {
                   </div>
                 </PaginatedItems>
               ) : (
-                <h5>Nenhum recolha foi encontrado!</h5>
+                <h5>Nenhum resultado foi encontrado!</h5>
               )}
             </div>
           </div>
@@ -164,10 +176,11 @@ class ListRecolha extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    recolhas: state.recolhas,
+    resultados: state.resultados,
   };
 };
 
-export default connect(mapStateToProps, { retrieveRecolhas, deleteRecolha })(
-  ListRecolha
-);
+export default connect(mapStateToProps, {
+  retrieveResultados,
+  deleteResultado,
+})(ListResultado);

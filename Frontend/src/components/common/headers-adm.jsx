@@ -88,16 +88,28 @@ class Headers extends Component {
                       <div className="searchbar-open">
                         <i className="flaticon-magnifier" />
                       </div>
+                      <div className="searchbar-open">
+                        <a
+                          href={`${process.env.PUBLIC_URL}/help/`}
+                          target="_blank"
+                        >
+                          {" "}
+                          <i class="fas fa-question-circle" />
+                        </a>
+                      </div>
                       <div className="user-dropdown-icon">
                         <i className="flaticon-user" />
                         <div className="account-dropdown">
                           <ul>
-                            
                             <li className="account-el">
                               <i className="bx bxs-user-account" />
-                              <Link to={`${process.env.PUBLIC_URL}/list-user-profile`} >Perfil</Link>
+                              <Link
+                                to={`${process.env.PUBLIC_URL}/list-user-profile`}
+                              >
+                                Perfil
+                              </Link>
                             </li>
-                            
+
                             <li className="account-el">
                               <Link
                                 to={"/"}
@@ -130,7 +142,7 @@ class Headers extends Component {
                       <img src={secondLogo} alt="" className="img-fluid" />
                     </div>
                     <ul>
-                    <li>
+                      <li>
                         <NavLink
                           activeClassName="active"
                           to={`${process.env.PUBLIC_URL}/`}
@@ -200,23 +212,34 @@ class Headers extends Component {
                           Teste
                         </NavLink>
                       </li>
-                      
-                      
                     </ul>
                     <div className="navbar-icons-2">
+                      
                       <div className="searchbar-open">
                         <i className="flaticon-magnifier" />
+                      </div>
+                      <div className="searchbar-open">
+                        <a
+                          href={`${process.env.PUBLIC_URL}/help/`}
+                          target="_blank"
+                        >
+                          {" "}
+                          <i class="fas fa-question-circle" />
+                        </a>
                       </div>
                       <div className="user-dropdown-icon">
                         <i className="flaticon-user" />
                         <div className="account-dropdown">
                           <ul>
-                            
                             <li className="account-el">
                               <i className="bx bxs-user-account" />
-                              <Link to={`${process.env.PUBLIC_URL}/list-user-profile`} >Perfil</Link>
+                              <Link
+                                to={`${process.env.PUBLIC_URL}/list-user-profile`}
+                              >
+                                Perfil
+                              </Link>
                             </li>
-                            
+
                             <li className="account-el">
                               <Link
                                 to={"/"}

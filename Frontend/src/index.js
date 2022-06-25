@@ -59,6 +59,11 @@ import AddPaciente from "./components/pages/paciente/AddPaciente";
 import EditPaciente from "./components/pages/paciente/EditPaciente";
 import ListRecolha from "./components/pages/recolha/ListRecolha";
 import AddRecolha from "./components/pages/recolha/AddRecolha";
+import EditRecolha from "./components/pages/recolha/EditRecolha";
+import VerRecolha from "./components/pages/recolha/VerRecolha";
+import ListResultado from "./components/pages/resultado/ListResultado";
+import VerResultado from "./components/pages/resultado/VerResultado";
+import AddResultado from "./components/pages/resultado/AddResultado";
 /*
  * Version : 0.1
  * Event : Rendering all content to web.
@@ -104,7 +109,13 @@ class Root extends React.Component {
           
           <PrivateRoute path="/list-recolha" component={ListRecolha} />
            <PrivateRoute path="/add-recolha" component={AddRecolha} />
-          {/*<PrivateRoute path="/edit-paciente" component={EditPaciente} /> */}
+          <PrivateRoute path="/edit-recolha" component={EditRecolha} />
+          <PrivateRoute path="/ver-recolha" component={VerRecolha} />
+
+          <PrivateRoute path="/list-resultado" component={ListResultado} />
+          <PrivateRoute path="/add-resultado" component={AddResultado} />
+           <PrivateRoute path="/add-resultado" component={AddResultado} />
+          <PrivateRoute path="/ver-resultado" component={VerResultado} /> 
 
           <PrivateRoute path="/list-teste" component={ListTeste} />
           <PrivateRoute path="/add-teste" component={AddTeste} />

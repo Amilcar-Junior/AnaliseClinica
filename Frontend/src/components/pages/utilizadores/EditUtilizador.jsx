@@ -254,6 +254,7 @@ class EditUtilizador extends Component {
                             value={currentUtilizador.password}
                             onChange={this.onChangePassword}
                             name="text"
+                            disabled
                           />
                         </div>
 
@@ -272,7 +273,7 @@ class EditUtilizador extends Component {
                           />
                         </div>
                         
-                        <div className="col-lg-6">
+                        <div className="col-lg-12">
                           <label className="form-label" htmlFor="role">
                             Cargo ( o selecionado é{" "}
                             <strong>

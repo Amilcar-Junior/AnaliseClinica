@@ -189,6 +189,13 @@
     "paciente": {
       "model": "paciente",
       "via": "resultados"
+    },
+    "recolha": {
+      "model": "recolha",
+      "via": "resultado"
+    },
+    "data": {
+      "type": "datetime"
     }
   }
 }

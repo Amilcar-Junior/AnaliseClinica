@@ -62,10 +62,10 @@ class MainBanner extends Component {
                     <div className="slider-item slider-item-1">
                         <div className="container">
                             <div className="slider-content wow fadeInLeft animated" data-wow-delay="300ms" data-wow-duration="1500ms">
-                                <h2>Praias de Cabo Verde</h2>
-                                <h5>Santiago</h5>
+                                <h2>Sua Saúde em primeiro lugar</h2>
+                                <h5>Health 360</h5>
                                 <div className="banner-btn">
-                                    <Link to={`${process.env.PUBLIC_URL}/package`} className="btn-common">Ver Mas</Link>
+                                    <Link to={`${process.env.PUBLIC_URL}/`} className="btn-common">Ver Mas</Link>
                                 </div>
                             </div>
                         </div>
@@ -73,10 +73,10 @@ class MainBanner extends Component {
                     <div className="slider-item slider-item-2">
                         <div className="container">
                             <div className="slider-content wow fadeInLeft animated" data-wow-delay="300ms" data-wow-duration="1500ms">
-                                <h2>Praias de Cabo Verde</h2>
-                                <h5>Boa Vista</h5>
+                                <h2>Fazer Análise Clinicas</h2>
+                                <h5>Health 360</h5>
                                 <div className="banner-btn">
-                                    <Link to={`${process.env.PUBLIC_URL}/package`} className="btn-common">Ver Mas</Link>
+                                    <Link to={`${process.env.PUBLIC_URL}/`} className="btn-common">Ver Mas</Link>
                                 </div>
                             </div>
                         </div>
@@ -84,10 +84,10 @@ class MainBanner extends Component {
                     <div className="slider-item slider-item-3">
                         <div className="container">
                             <div className="slider-content wow fadeInLeft animated" data-wow-delay="300ms" data-wow-duration="1500ms">
-                                <h2>Praias de Cabo Verde</h2>
-                                <h5>Sal</h5>
+                                <h2>Sua Saúde em primeiro lugar</h2>
+                                <h5>Health 360</h5>
                                 <div className="banner-btn">
-                                    <Link to={`${process.env.PUBLIC_URL}/package`} className="btn-common">Ver Mas</Link>
+                                    <Link to={`${process.env.PUBLIC_URL}/`} className="btn-common">Ver Mas</Link>
                                 </div>
                             </div>
                         </div>
@@ -97,7 +97,7 @@ class MainBanner extends Component {
             {/* ===============  Main banner area end =============== */}
 
             {/* ===============  findfrom area start ============= */}
-            <div className="find-form">
+            {/* <div className="find-form">
                 <div className="container">
                     <form className="findfrom-wrapper">
                         <div className="row">
@@ -130,7 +130,7 @@ class MainBanner extends Component {
                         </div>
                     </form>
                 </div>
-            </div>
+            </div> */}
 
             {/* ===============  findfrom area end =============== */}
         </>

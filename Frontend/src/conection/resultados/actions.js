@@ -68,7 +68,9 @@ export const createResultado =
     urina_ii_leucocitos,
     urina_ii_eritrocitos,
     observacao,
-    paciente
+    data,
+    paciente,
+    recolha
   ) =>
   async (dispatch) => {
     try {
@@ -131,7 +133,9 @@ export const createResultado =
         urina_ii_leucocitos,
         urina_ii_eritrocitos,
         observacao,
+        data,
         paciente,
+        recolha,
       });
 
       dispatch({

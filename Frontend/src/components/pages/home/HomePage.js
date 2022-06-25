@@ -55,12 +55,10 @@ class HomePage extends Component {
 
         {/*---------Start Imported All Sections-----------*/}
         <MainBanner />
-        <Packages />
-        <Destinations />
         <Achievement />
         <Review />
-        <Features />
-        <Blog />
+        <div className="end"/>
+        
         {/*---------End Imported All Sections-----------*/}
       </div>
     );

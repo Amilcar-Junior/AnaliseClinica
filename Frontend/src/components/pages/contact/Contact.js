@@ -45,7 +45,7 @@ class AboutUs extends Component {
                                     </div>
                                     <div className="contact-info">
                                         <h5>Address</h5>
-                                        <p>971-949 8th Ave 949 New York, NY</p>
+                                        <p>Praia, Cidadela Health 360</p>
                                     </div>
                                 </div>
                             </div>
@@ -92,21 +92,20 @@ class AboutUs extends Component {
                             <div className="col-lg-6">
                                 <div className="contact-details">
                                     <h5 className="contact-d-head">Get In Touch</h5>
-                                    <p>Suspendisse dolor risus, congue ac diam id, viverra facilisis dolor. Cras nec purus sagittis, varius tortor at, maximus erat. Sed at tellus id tellus lobortis dictum. Mauris dignissim, turpis vitae ullamcorper fermentum, sapien arcu aliquam arcu, in viverra quam est ac ex. Cras sed lectus eu.
-                                    </p>
+                                    <p>Uma solução integrada e completa para as necessidades da gestão da saúde de municípios, clínicas, hospitais, unidades básicas e outras unidades de saúde </p>
                                     <ul className="office-clock">
                                         <li>
                                             <div className="clock-icon"><i className="flaticon-clock-1" /></div>
                                             <div className="clock-info">
-                                                <h5>Open Hour</h5>
-                                                <p>Sat - Thu At <br /> 10.00Am to 10.00PM</p>
+                                                <h5>Horario aberto</h5>
+                                                <p>Seg - Sex <br /> 10.00Am to 10.00PM</p>
                                             </div>
                                         </li>
                                         <li>
                                             <div className="clock-icon"><i className="flaticon-clock-1" /></div>
                                             <div className="clock-info">
-                                                <h5>Close Hour</h5>
-                                                <p>Friday Office Close</p>
+                                                <h5>Horario Fechado</h5>
+                                                <p>Fim é Semana Fechado</p>
                                             </div>
                                         </li>
                                     </ul>
@@ -118,19 +117,19 @@ class AboutUs extends Component {
                                         <h5 className="contact-d-head">Contact Us</h5>
                                         <div className="row">
                                             <div className="col-lg-6">
-                                                <input type="text" placeholder="Full Name" required />
+                                                <input type="text" placeholder="Nome Completo" required />
                                             </div>
                                             <div className="col-lg-6">
-                                                <input type="text" placeholder="Subject" required/>
+                                                <input type="text" placeholder="Sujeito" required/>
                                             </div>
                                             <div className="col-lg-6">
-                                                <input type="email" placeholder="Your Email" required/>
+                                                <input type="email" placeholder="Seu Email" required/>
                                             </div>
                                             <div className="col-lg-6">
-                                                <input type="text" placeholder="Phone" required/>
+                                                <input type="text" placeholder="Contacto" required/>
                                             </div>
                                             <div className="col-lg-12">
-                                                <textarea cols={30} rows={7} placeholder="Write Message" defaultValue={""} />
+                                                <textarea cols={30} rows={7} placeholder="Escreva a Messagem" defaultValue={""} />
                                             </div>
                                             <div className="col-lg-12">
                                                 <input type="submit" defaultValue="Submit Now" />
@@ -142,7 +141,9 @@ class AboutUs extends Component {
                         </div>
                     </div>
                 </div>
+                
             </div>
+            <div className="end"/>
         </>
     );
   }
