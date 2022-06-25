@@ -3,6 +3,8 @@
  * AuthPage
  *
  */
+ import { createLog } from "../../conection/logs/actions";
+ import { retrieveProfile } from "../../conection/profile/actions";
 
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -23,10 +25,41 @@ import './styles.css';
 import { connect } from 'react-redux';
 
 class AuthPage extends React.Component {
+  constructor(props){
+    super(props);
+    this.saveLog = this.saveLog.bind(this);
+
+    this.state = {
+      user: null,
+    }
+  }
+
   state = { value: {}, errors: [], didCheckErrors: false };
+
+
+  async saveLog() {
+    const data = new Date();
+    //+1 dia porque o strapi remove 1 dia bug da verção do strapi
+    data.setDate(data.getDate() + 1);
+    const tipo = "Login";
+    const user = this.state.user.id;
+    console.log(this.state);
+
+    this.props
+      .createLog(data, tipo, user)
+      .catch((err) => console.log(err.response));
+  }
 
   componentDidMount() {
     this.generateForm(this.props);
+    this.props.retrieveProfile();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.user !== this.props.user) {
+      this.setState({ user: this.props.user });
+      console.log(this.props.user);
+    }
   }
 
   componentWillReceiveProps(nextProps) {
@@ -82,6 +115,7 @@ class AuthPage extends React.Component {
         auth.setUserInfo(response.user, body.rememberMe);
         auth.setHeaderAuthorization(response.jwt);
         this.props.addUser(response.user)
+        this.saveLog()
         this.redirectUser();
       })
       .catch(err => {
@@ -95,7 +129,7 @@ class AuthPage extends React.Component {
   };
 
   redirectUser = () => {
-    this.props.history.push('/home-page-adm');
+    this.props.history.push('/dashboard');
   };
 
   /**
@@ -211,5 +245,9 @@ AuthPage.propTypes = {
 };
 
 
+const mapStateToProps = (state) => ({
+  user: state.users,
+});
 
-export default connect(null, { addUser })(AuthPage);
+export default connect(mapStateToProps, { addUser,createLog,
+  retrieveProfile, })(AuthPage);

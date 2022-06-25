@@ -6,8 +6,44 @@ import logoMain from "../../assets/images/logo.png";
 import secondLogo from "../../assets/images/logo-2.png";
 import auth from "../../utils/auth";
 import { connect } from "react-redux";
+import { createLog } from "../../conection/logs/actions";
+import { retrieveProfile } from "../../conection/profile/actions";
 
 class Headers extends Component {
+  constructor(props) {
+    super(props);
+    this.saveLog = this.saveLog.bind(this);
+
+    this.state = {
+      user: null,
+    };
+  }
+
+  async saveLog() {
+    const data = new Date();
+    //+1 dia porque o strapi remove 1 dia bug da verção do strapi
+    data.setDate(data.getDate() + 1);
+    const tipo = "Log Out";
+    const user = this.state.user.id;
+    console.log(this.state);
+
+    this.props
+      .createLog(data, tipo, user)
+      .catch((err) => console.log(err.response));
+      auth.clearAppStorage();
+  }
+
+  componentDidMount() {
+    this.props.retrieveProfile();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.user !== this.props.user) {
+      this.setState({ user: this.props.user });
+      console.log(this.props.user);
+    }
+  }
+
   scrollTop() {
     window.scrollTo({
       top: 0,
@@ -113,9 +149,7 @@ class Headers extends Component {
                             <li className="account-el">
                               <Link
                                 to={"/"}
-                                onClick={() => {
-                                  auth.clearAppStorage();
-                                }}
+                                onClick={this.saveLog}
                               >
                                 {" "}
                                 <i className="bx bx-log-in-circle" />
@@ -214,7 +248,6 @@ class Headers extends Component {
                       </li>
                     </ul>
                     <div className="navbar-icons-2">
-                      
                       <div className="searchbar-open">
                         <i className="flaticon-magnifier" />
                       </div>
@@ -243,9 +276,7 @@ class Headers extends Component {
                             <li className="account-el">
                               <Link
                                 to={"/"}
-                                onClick={() => {
-                                  auth.clearAppStorage();
-                                }}
+                                onClick={this.saveLog}
                               >
                                 {" "}
                                 <i className="bx bx-log-in-circle" />
@@ -294,4 +325,11 @@ class Headers extends Component {
   }
 }
 
-export default Headers;
+const mapStateToProps = (state) => ({
+  user: state.users,
+});
+
+export default connect(mapStateToProps, {
+  createLog,
+  retrieveProfile,
+})(Headers);

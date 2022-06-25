@@ -64,6 +64,7 @@ import VerRecolha from "./components/pages/recolha/VerRecolha";
 import ListResultado from "./components/pages/resultado/ListResultado";
 import VerResultado from "./components/pages/resultado/VerResultado";
 import AddResultado from "./components/pages/resultado/AddResultado";
+import Dashboard from "./components/pages/dashboard";
 /*
  * Version : 0.1
  * Event : Rendering all content to web.
@@ -123,6 +124,10 @@ class Root extends React.Component {
 
           <PrivateRoute path="/list-user-profile" component={ProfileList} />
           <PrivateRoute path="/edit-user-profile" component={EditProfile} />
+
+
+          <PrivateRoute path="/dashboard" component={Dashboard} />
+          
 
           <NotFound exact path="*" component={error} />
         </Switch>
