@@ -79,11 +79,11 @@ class Headers extends Component {
                                             <NavLink  activeClassName="active" to={`${process.env.PUBLIC_URL}/`} onClick={this.scrollTop} >Home</NavLink >
                                         </li>
                                         <li>
-                                            <NavLink  activeClassName="active" to={`${process.env.PUBLIC_URL}/about-us`} onClick={this.scrollTop} >Sobre Nos</NavLink >
+                                            <NavLink  activeClassName="active" to={`${process.env.PUBLIC_URL}/about-us`} onClick={this.scrollTop} >Sobre Nós</NavLink >
                                         </li>
                                         
                                         <li>
-                                            <NavLink activeClassName="active" to={`${process.env.PUBLIC_URL}/contact`} onClick={this.scrollTop} >Contact Us</NavLink>
+                                            <NavLink activeClassName="active" to={`${process.env.PUBLIC_URL}/contact`} onClick={this.scrollTop} >Contate Nós</NavLink>
                                         </li>
                                     </ul>
                                     <div className="navbar-icons-2">

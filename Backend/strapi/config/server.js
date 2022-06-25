@@ -5,6 +5,7 @@ module.exports = ({ env }) => ({
     auth: {
       secret: env('ADMIN_JWT_SECRET', '6748b96b6ece2db53c4d97a53e29b720'),
     },
+    watchIgnoreFiles: ["**/private/**"],
   },
   cron: {
     enabled: true

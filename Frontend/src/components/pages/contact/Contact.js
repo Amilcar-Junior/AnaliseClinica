@@ -21,13 +21,13 @@ class AboutUs extends Component {
                     <div className="row">
                         <div className="col-lg-12 col-md-12 col-sm-12">
                             <div className="breadcrumb-wrap">
-                                <h2>Contact US</h2>
+                                <h2>Contate Nós</h2>
                                 <ul className="breadcrumb-links">
                                     <li>
                                         <Link to={`${process.env.PUBLIC_URL}/`}>Home</Link>
                                         <i className="bx bx-chevron-right" />
                                     </li>
-                                    <li>Contact Us</li>
+                                    <li>Contate Nós</li>
                                 </ul>
                             </div>
                         </div>
@@ -44,7 +44,7 @@ class AboutUs extends Component {
                                     <div className="contact-icon"><i className="flaticon-arrival" />
                                     </div>
                                     <div className="contact-info">
-                                        <h5>Address</h5>
+                                        <h5>Endereço</h5>
                                         <p>Praia, Cidadela Health 360</p>
                                     </div>
                                 </div>
@@ -54,7 +54,7 @@ class AboutUs extends Component {
                                     <div className="contact-icon"><i className="flaticon-customer-service" />
                                     </div>
                                     <div className="contact-info">
-                                        <h5>Email &amp; Phone</h5>
+                                        <h5>Email &amp; Telefone</h5>
                                         <p>(123) 456 7890
                                             hello@gmail.com</p>
                                     </div>
@@ -91,7 +91,7 @@ class AboutUs extends Component {
                         <div className="row">
                             <div className="col-lg-6">
                                 <div className="contact-details">
-                                    <h5 className="contact-d-head">Get In Touch</h5>
+                                    <h5 className="contact-d-head">Health 360</h5>
                                     <p>Uma solução integrada e completa para as necessidades da gestão da saúde de municípios, clínicas, hospitais, unidades básicas e outras unidades de saúde </p>
                                     <ul className="office-clock">
                                         <li>

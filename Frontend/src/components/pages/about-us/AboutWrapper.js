@@ -27,7 +27,7 @@ class AboutWrapper extends Component {
                                <div className="about-img">
                                    <img src={about1Img} alt="" className="img-fluid" />
                                </div>
-                               <div className="about-video">
+                               <div className="about-video" >
                                    <img src={about2Img} alt="" className="img-fluid"  />
                                    <i onClick={() => this.setState({ isOpen: true })} class="flaticon-play-button-arrowhead"></i>
                                </div>
@@ -38,23 +38,17 @@ class AboutWrapper extends Component {
                                <h5>About TourX</h5>
                                <h2>The Best Travel Agency
                                    Company.</h2>
-                               <p>Fusce aliquam luctus est, eget tincidunt velit scelerisque
-                                   rhoncus. Aliquam lacinia ipsum ornare, porttitor risus nec,
-                                   mattis mauris. Nunc nec ornare nisi, vel elementum est.
-                                   Proin malesuada venenatis ex, eu fringilla justo scelerisque
-                                   sit amet. Sed fringilla nec purus non venenatis. Aliquam
-                                   nec turpis pharetra, bibendum lorem in, sollicitudin nibh.
-                                   Nulla sit amet lacus diam.</p>
+                               <p>Uma solução integrada e completa para as necessidades da gestão da saúde de municípios, clínicas, hospitais, unidades básicas e outras unidades de saúde</p>
                                <ul className="about-list">
-                                   <li><i className="flaticon-double-checking" /> Donec viverra orci On a</li>
-                                   <li><i className="flaticon-double-checking" /> Donec viverra orci On a</li>
-                                   <li><i className="flaticon-double-checking" /> Donec viverra orci On a</li>
-                                   <li><i className="flaticon-double-checking" /> Donec viverra orci On a</li>
-                                   <li><i className="flaticon-double-checking" /> Donec viverra orci On a</li>
-                                   <li><i className="flaticon-double-checking" /> Donec viverra orci On a</li>
+                                   <li><i className="flaticon-double-checking" /> Anatomia Patológica</li>
+                                   <li><i className="flaticon-double-checking" /> Alergologia </li>
+                                   <li><i className="flaticon-double-checking" /> Biologia Molecular </li>
+                                   <li><i className="flaticon-double-checking" /> Endocrinologia </li>
+                                   <li><i className="flaticon-double-checking" /> Hematologia </li>
+                                   <li><i className="flaticon-double-checking" /> Imunologia </li>
                                </ul>
                                <div className="about-wrapper-btn">
-                                   <Link to={"#"} className="btn-common">Read More</Link>
+                                   <Link to={"#"} className="btn-common">Ler Mais</Link>
                                </div>
                            </div>
                        </div>

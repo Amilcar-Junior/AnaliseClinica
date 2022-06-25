@@ -233,7 +233,7 @@ class Footers extends Component {
                                 <div className="row">
                                     <div className="col-lg-5 col-md-5 col-sm-7">
                                         <div className="footer-links">
-                                            <h5 className="widget-title">Contact us</h5>
+                                            <h5 className="widget-title">Contatos</h5>
                                             <div className="contact-box">
                                                 <span><i className="bx bx-phone" /></span>
                                                 <div>
@@ -259,24 +259,19 @@ class Footers extends Component {
                                     </div>
                                     <div className="col-lg-3 col-md-3 col-sm-5">
                                         <div className="footer-links">
-                                            <h5 className="widget-title">support</h5>
+                                            <h5 className="widget-title">Suporte</h5>
                                             <div className="category-list">
                                                 <ul>
                                                     <li>
-                                                        <Link to={`${process.env.PUBLIC_URL}/contact`} onClick={this.scrollTop} >Contact us</Link>
+                                                        <Link to={`${process.env.PUBLIC_URL}/contact`} onClick={this.scrollTop} >Contate Nós</Link>
                                                     </li>
                                                     <li>
-                                                        <Link to={`${process.env.PUBLIC_URL}/about-us`} onClick={this.scrollTop}>About us</Link>
+                                                        <Link to={`${process.env.PUBLIC_URL}/about-us`} onClick={this.scrollTop}>Sobre Nós</Link>
                                                     </li>
                                                     <li>
-                                                        <Link to={`${process.env.PUBLIC_URL}/destination`} onClick={this.scrollTop} >Destinations</Link>
+                                                        <Link to={`${process.env.PUBLIC_URL}/destination`} onClick={this.scrollTop} >Home</Link>
                                                     </li>
-                                                    <li>
-                                                        <Link to={`${process.env.PUBLIC_URL}/blog`} onClick={this.scrollTop}>our Blogs</Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link to={`${process.env.PUBLIC_URL}/package`} className="sub-item" onClick={this.scrollTop}>Package</Link>
-                                                    </li>
+                                                    
                                                 </ul>
                                             </div>
                                         </div>

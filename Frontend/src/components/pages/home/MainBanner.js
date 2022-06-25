@@ -65,7 +65,7 @@ class MainBanner extends Component {
                                 <h2>Sua Saúde em primeiro lugar</h2>
                                 <h5>Health 360</h5>
                                 <div className="banner-btn">
-                                    <Link to={`${process.env.PUBLIC_URL}/`} className="btn-common">Ver Mas</Link>
+                                    <Link to={`${process.env.PUBLIC_URL}/`} className="btn-common">Ler Mais</Link>
                                 </div>
                             </div>
                         </div>
@@ -76,7 +76,7 @@ class MainBanner extends Component {
                                 <h2>Fazer Análise Clinicas</h2>
                                 <h5>Health 360</h5>
                                 <div className="banner-btn">
-                                    <Link to={`${process.env.PUBLIC_URL}/`} className="btn-common">Ver Mas</Link>
+                                    <Link to={`${process.env.PUBLIC_URL}/`} className="btn-common">Ler Mais</Link>
                                 </div>
                             </div>
                         </div>
@@ -87,7 +87,7 @@ class MainBanner extends Component {
                                 <h2>Sua Saúde em primeiro lugar</h2>
                                 <h5>Health 360</h5>
                                 <div className="banner-btn">
-                                    <Link to={`${process.env.PUBLIC_URL}/`} className="btn-common">Ver Mas</Link>
+                                    <Link to={`${process.env.PUBLIC_URL}/`} className="btn-common">Ler Mais</Link>
                                 </div>
                             </div>
                         </div>
