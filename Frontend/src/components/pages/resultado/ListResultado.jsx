@@ -8,6 +8,7 @@ import {
   retrieveResultados,
   deleteResultado,
 } from "../../../conection/resultados/actions";
+import { retrieveProfile } from "../../../conection/profile/actions";
 
 import { ExportCSV } from "../../ExportEx/ExportCSV";
 
@@ -21,7 +22,15 @@ class ListResultado extends Component {
 
     this.state = {
       currentItens: null,
+      user: null,
     };
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.user !== this.props.user) {
+      this.setState({ user: this.props.user });
+      console.log(this.props.user);
+    }
   }
 
   handleSetItens(itens) {
@@ -30,6 +39,7 @@ class ListResultado extends Component {
 
   componentDidMount() {
     this.props.retrieveResultados();
+    this.props.retrieveProfile();
   }
 
   removeResultado = (id) => {
@@ -42,7 +52,8 @@ class ListResultado extends Component {
 
   render() {
     const { currentItens } = this.state;
-    const { resultados } = this.props;
+    const { resultados, user } = this.props;
+    console.log(user);
     console.log(resultados);
     return (
       <>
@@ -62,12 +73,14 @@ class ListResultado extends Component {
               <h3 style={{ color: "#0EC69A" }}>Lista de Resultados</h3>
 
               <div className="row mt-4">
-                <div className="col-lg-4">
-                  <Link to="/add-resultado" className="btn btn-success">
-                    <i class="fas fa-plus" /> Adicionar
-                  </Link>
-                </div>
-                <div className="col-lg-4"/>
+                {user && (user.role.id === 3 || user.role.id === 4) && (
+                  <div className="col-lg-4">
+                    <Link to="/add-resultado" className="btn btn-success">
+                      <i class="fas fa-plus" /> Adicionar
+                    </Link>
+                  </div>
+                )}
+                <div className="col-lg-4" />
                 <div className="col-lg-4 float-right">
                   <ExportCSV
                     csvData={this.props.resultados}
@@ -106,7 +119,7 @@ class ListResultado extends Component {
                         {currentItens &&
                           currentItens.map(
                             (
-                              { id, observacao, data,paciente, recolha },
+                              { id, observacao, data, paciente, recolha },
                               i
                             ) => (
                               <tr key={i}>
@@ -129,24 +142,32 @@ class ListResultado extends Component {
                                         <i className="fas fa-plus"></i> Ver
                                       </Link>
                                     </div>
-                                    <div className="col-xs-12 col-md-4 text-center">
-                                      <Link
-                                        className="btn btn-danger btn-sm me-2"
-                                        onClick={() => this.removeResultado(id)}
-                                      >
-                                        <i className="fas fa-trash" /> Eliminar
-                                      </Link>
-                                    </div>
+                                    {user &&
+                                      (user.role.id === 3 ||
+                                        user.role.id === 4) && (
+                                        <>
+                                          <div className="col-xs-12 col-md-4 text-center">
+                                            <Link
+                                              className="btn btn-danger btn-sm me-2"
+                                              onClick={() =>
+                                                this.removeResultado(id)
+                                              }
+                                            >
+                                              <i className="fas fa-trash" />{" "}
+                                              Eliminar
+                                            </Link>
+                                          </div>
 
-                                    <div className="col-xs-6 col-md-4 text-center">
-                                      <Link
-                                        to={`/add-resultado/`}
-                                        className="btn btn-primary btn-sm"
-                                      >
-                                        <i className="fas fa-edit" /> Editar
-                                      </Link>
-                                    </div>
-                                    {/* <div className="col-xs-6 col-md-4 text-center">
+                                          <div className="col-xs-6 col-md-4 text-center">
+                                            <Link
+                                              to={`/add-resultado/`}
+                                              className="btn btn-primary btn-sm"
+                                            >
+                                              <i className="fas fa-edit" />{" "}
+                                              Editar
+                                            </Link>
+                                          </div>
+                                          {/* <div className="col-xs-6 col-md-4 text-center">
                                       <Link
                                         to={`/edit-resultado/${id}`}
                                         className="btn btn-primary btn-sm"
@@ -154,6 +175,8 @@ class ListResultado extends Component {
                                         <i className="fas fa-edit" /> Editar
                                       </Link>
                                     </div> */}
+                                        </>
+                                      )}
                                   </div>
                                 </td>
                               </tr>
@@ -177,10 +200,12 @@ class ListResultado extends Component {
 const mapStateToProps = (state) => {
   return {
     resultados: state.resultados,
+    user: state.users,
   };
 };
 
 export default connect(mapStateToProps, {
   retrieveResultados,
   deleteResultado,
+  retrieveProfile,
 })(ListResultado);

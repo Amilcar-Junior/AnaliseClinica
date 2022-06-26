@@ -8,6 +8,7 @@ import {
   retrieveRecolhas,
   deleteRecolha,
 } from "../../../conection/recolhas/actions";
+import { retrieveProfile } from "../../../conection/profile/actions";
 
 import { ExportCSV } from "../../ExportEx/ExportCSV";
 
@@ -22,7 +23,15 @@ class ListRecolha extends Component {
 
     this.state = {
       currentItens: null,
+      user: null,
     };
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.user !== this.props.user) {
+      this.setState({ user: this.props.user });
+      console.log(this.props.user);
+    }
   }
 
   handleSetItens(itens) {
@@ -31,6 +40,7 @@ class ListRecolha extends Component {
 
   componentDidMount() {
     this.props.retrieveRecolhas();
+    this.props.retrieveProfile();
   }
 
   removeRecolha = (id) => {
@@ -43,7 +53,8 @@ class ListRecolha extends Component {
 
   render() {
     const { currentItens } = this.state;
-    const { recolhas } = this.props;
+    const { recolhas, user } = this.props;
+    console.log(user);
     console.log(recolhas);
     return (
       <>
@@ -65,11 +76,13 @@ class ListRecolha extends Component {
               </h3>
 
               <div className="row mt-4">
-                <div className="col-lg-4">
-                  <Link to="/add-recolha" className="btn btn-success">
-                    <i class="fas fa-plus" /> Adicionar
-                  </Link>
-                </div>
+                {user && (user.role.id === 3 || user.role.id === 4) && (
+                  <div className="col-lg-4">
+                    <Link to="/add-recolha" className="btn btn-success">
+                      <i class="fas fa-plus" /> Adicionar
+                    </Link>
+                  </div>
+                )}
                 <div className="col-lg-4 center">
                   <ExportCSV csvData={this.props.recolhas} fileName="Recolha" />
                 </div>
@@ -126,22 +139,32 @@ class ListRecolha extends Component {
                                         <i className="fas fa-plus"></i> Ver
                                       </Link>
                                     </div>
-                                    <div className="col-xs-6 col-md-4 text-center">
-                                      <Link
-                                        to={`/edit-recolha/${id}`}
-                                        className="btn btn-primary btn-sm"
-                                      >
-                                        <i className="fas fa-edit" /> Editar
-                                      </Link>
-                                    </div>
-                                    <div className="col-xs-6 col-md-4 text-center">
-                                      <Link
-                                        className="btn btn-danger btn-sm me-2"
-                                        onClick={() => this.removeRecolha(id)}
-                                      >
-                                        <i className="fas fa-trash" /> Eliminar
-                                      </Link>
-                                    </div>
+                                    {user &&
+                                      (user.role.id === 3 ||
+                                        user.role.id === 4) && (
+                                        <>
+                                          <div className="col-xs-6 col-md-4 text-center">
+                                            <Link
+                                              to={`/edit-recolha/${id}`}
+                                              className="btn btn-primary btn-sm"
+                                            >
+                                              <i className="fas fa-edit" />{" "}
+                                              Editar
+                                            </Link>
+                                          </div>
+                                          <div className="col-xs-6 col-md-4 text-center">
+                                            <Link
+                                              className="btn btn-danger btn-sm me-2"
+                                              onClick={() =>
+                                                this.removeRecolha(id)
+                                              }
+                                            >
+                                              <i className="fas fa-trash" />{" "}
+                                              Eliminar
+                                            </Link>
+                                          </div>
+                                        </>
+                                      )}
                                   </div>
                                 </td>
                               </tr>
@@ -165,9 +188,12 @@ class ListRecolha extends Component {
 const mapStateToProps = (state) => {
   return {
     recolhas: state.recolhas,
+    user: state.users,
   };
 };
 
-export default connect(mapStateToProps, { retrieveRecolhas, deleteRecolha })(
-  ListRecolha
-);
+export default connect(mapStateToProps, {
+  retrieveRecolhas,
+  deleteRecolha,
+  retrieveProfile,
+})(ListRecolha);

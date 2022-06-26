@@ -51,6 +51,8 @@ class Headers extends Component {
     });
   }
   render() {
+    const user = this.state.user
+    console.log(user)
     return (
       <>
         {/* =============== Topbar area start =============== */}
@@ -176,6 +178,7 @@ class Headers extends Component {
                       <img src={secondLogo} alt="" className="img-fluid" />
                     </div>
                     <ul>
+                      {user && user.role.id === 3 && (
                       <li>
                         <NavLink
                           activeClassName="active"
@@ -185,10 +188,14 @@ class Headers extends Component {
                           Dashboard
                         </NavLink>
                       </li>
+                      )}
+                      {user && user.role.id != 4 && (
                       <li className="has-child-menu">
                         <Link to={"#"}>Health</Link>
                         <i className="fl flaticon-plus">+</i>
+                        
                         <ul className="sub-menu">
+                          {user && user.role.id === 3 && (
                           <li>
                             <NavLink
                               activeClassName="active"
@@ -199,6 +206,8 @@ class Headers extends Component {
                               Utilizadores
                             </NavLink>
                           </li>
+                          )}
+                          {user && (user.role.id === 3 || user.role.id === 5) && (
                           <li>
                             <NavLink
                               activeClassName="active"
@@ -209,8 +218,11 @@ class Headers extends Component {
                               Pacientes
                             </NavLink>
                           </li>
+                          )}
                         </ul>
                       </li>
+                      )}
+                      {user && (user.role.id === 3 || user.role.id === 4 || user.role.id === 5) && (
                       <li className="has-child-menu">
                         <Link to={"#"}>Análise</Link>
                         <i className="fl flaticon-plus">+</i>
@@ -237,7 +249,8 @@ class Headers extends Component {
                           </li>
                         </ul>
                       </li>
-                      <li>
+                      )}
+                      {/* <li>
                         <NavLink
                           activeClassName="active"
                           to={`${process.env.PUBLIC_URL}/list-teste`}
@@ -245,7 +258,7 @@ class Headers extends Component {
                         >
                           Teste
                         </NavLink>
-                      </li>
+                      </li> */}
                     </ul>
                     <div className="navbar-icons-2">
                       <div className="searchbar-open">

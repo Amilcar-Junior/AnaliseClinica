@@ -28,7 +28,7 @@
 .img-holder{
     width: 237px;
     height: 238px;
-    border: 3px solid #FF7F47;
+    border: 3px solid #0EC69A;
     border-radius: 5px;
     align-self:center;
 }
@@ -48,7 +48,7 @@
     margin: auto;
     width: 150px;
     height: 40px;
-    background-color: #FF7F47!important;
+    background-color: #0EC69A!important;
     color: white;
     text-align: center;
     border-radius: 10px;

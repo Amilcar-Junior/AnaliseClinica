@@ -8,6 +8,8 @@ import {
   retrieveUtilizadores,
   deleteUtilizador,
 } from "../../../conection/utilizadores/actions";
+import { retrieveProfile } from "../../../conection/profile/actions";
+
 import PaginatedItems from "../../pagination/Paginate";
 import { ExportCSV } from "../../ExportEx/ExportCSV";
 import axios from "axios";
@@ -27,9 +29,15 @@ class UtilizadoresList extends Component {
   handleSetItens(itens) {
     this.setState({ currentItens: itens });
   }
-
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.user !== this.props.user) {
+      this.setState({ user: this.props.user });
+      console.log(this.props.user);
+    }
+  }
   componentDidMount() {
     this.props.retrieveUtilizadores();
+    this.props.retrieveProfile();
   }
 
   removeUtilizador = (id) => {
@@ -40,11 +48,12 @@ class UtilizadoresList extends Component {
 
   render() {
     const { currentItens } = this.state;
-    const { utilizadores } = this.props;
+    const { utilizadores, user } = this.props;
     console.log(utilizadores);
     console.log(currentItens);
     return (
       <>
+      {user && user.role.id === 3 ? (
         <div className="container">
           <div className="row">
             <div className="col-1">
@@ -185,8 +194,27 @@ class UtilizadoresList extends Component {
               </div>
             </div>
           </div>
+          <div className="end" />
         </div>
-        <div className="end" />
+        
+        ) : (
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-12">
+                <h1
+                  style={{
+                    color: "#0EC69A",
+                    textAlign: "center",
+                    paddingBottom: 250,
+                    paddingTop:250,
+                  }}
+                >
+                  Voçê Não Tem Permissão para acessar esta pagina
+                </h1>
+              </div>
+            </div>
+          </div>
+        )}
       </>
     );
   }
@@ -195,10 +223,11 @@ class UtilizadoresList extends Component {
 const mapStateToProps = (state) => {
   return {
     utilizadores: state.utilizadores,
+    user: state.users,
   };
 };
 
 export default connect(mapStateToProps, {
   retrieveUtilizadores,
-  deleteUtilizador,
+  deleteUtilizador, retrieveProfile
 })(UtilizadoresList);

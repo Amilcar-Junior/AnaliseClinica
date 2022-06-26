@@ -16,7 +16,7 @@ export const addUser = (user) => dispatch => {
   dispatch(
     {
       type: RETRIEVE_PROFILE,
-      payload: user
+      payload: user,
     }
   )
 };

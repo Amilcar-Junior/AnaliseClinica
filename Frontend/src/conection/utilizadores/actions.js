@@ -15,7 +15,7 @@ import {
    
    export const createUtilizador =
    
-    (username, email, password, confirmed, blocked, role, name, telefone, endereco, especialidade ) => async (dispatch) => {
+    (username, email, password, confirmed, blocked, role, name, telefone, endereco, especialidade, foto ) => async (dispatch) => {
    
       try {
    
@@ -40,6 +40,7 @@ import {
          endereco,
         
          especialidade,
+         foto,
    
         });
    

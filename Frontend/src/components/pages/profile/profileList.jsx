@@ -6,8 +6,12 @@ import { Link } from "react-router-dom";
 
 import { retrieveProfile } from "../../../conection/profile/actions";
 
-
+import {
+  retrieveUtilizadores,
+  
+} from "../../../conection/utilizadores/actions";
 import './App.css';
+import axios from "axios";
 
 
 class ProfileList extends Component {
@@ -18,10 +22,22 @@ class ProfileList extends Component {
     this.state = {
       users: {},
       role: {},
-      gruposand: {},
-      foto: []
+      foto: {},
+      user_atual: {},
     }
 
+  }
+
+  async getOptionsUser() {
+    const user = await axios.get(
+      process.env.REACT_APP_SERVER_URL + "/users"
+    )
+    const user_atual = this.state.users
+    const data = user.data;
+
+    const options = data.filter((item) => item.id === user_atual.id)
+    const foto = options.map((e) => ({foto : e.foto}));
+    this.setState({ user_atual: options, foto: foto });
   }
 
   getUserInfo() {
@@ -42,10 +58,13 @@ class ProfileList extends Component {
     console.log(user)
   }
 
+
   componentDidMount() {
 
     this.props.retrieveProfile();
     this.getUserInfo()
+    this.props.retrieveUtilizadores();
+    this.getOptionsUser();
 
   };
 
@@ -53,12 +72,11 @@ class ProfileList extends Component {
   render() {
 
 
-    const { users } = this.props;
-    const { role, foto} = this.state;
+    const { utilizadores,users } = this.props;
+    const { role, foto, user_atual} = this.state;
+    const apiUrl = "http://localhost:1337/"
 
-    console.log(users)
-    console.log(users.foto)
-    console.log(foto)
+
     return (
 
       <>
@@ -75,7 +93,7 @@ class ProfileList extends Component {
                   <div class="input-group flex-nowrap">
                     <span class="input-group-text" id="addon-wrapping">
 
-                      <Link to={`${process.env.PUBLIC_URL}/home-page-adm`}>
+                      <Link to={`${process.env.PUBLIC_URL}/`}>
                         <i class="fas fa-arrow-left" /> Voltar
                       </Link>
 
@@ -96,7 +114,7 @@ class ProfileList extends Component {
                             <div className="col-lg-1"/>
                             <div className="col-lg-3">
                               <div className="img-holder">
-                                      {users.foto && <img src={process.env.REACT_APP_SERVER_URL + users.foto.url} id="img" className="img" alt="avatar" />}
+                                      {user_atual.foto && <img src={apiUrl + user_atual.foto.url} id="img" className="img" alt="avatar" />}
                               </div>
                               <div className="end"/>
                             </div>
@@ -176,11 +194,11 @@ const mapStateToProps = (state) => {
   console.log(state)
   console.log(state.users)
   return {
-
+    utilizadores: state.utilizadores,
     users: state.users,
 
   };
 
 };
 
-export default connect(mapStateToProps, { retrieveProfile })(ProfileList);
+export default connect(mapStateToProps, { retrieveProfile,retrieveUtilizadores })(ProfileList);
