@@ -108,7 +108,7 @@ class ProfileList extends Component {
                     <div className="submit-form">
                       <div>
                         <div className="ask-inputs">
-                          <h5 className="center" style={{ color: "#FF7F47" }}>Minhas Infomações</h5>
+                          <h5 className="center" style={{ color: "#0EC69A" }}>Minhas Infomações</h5>
                           <div className="row">
                    
                             <div className="col-lg-1"/>

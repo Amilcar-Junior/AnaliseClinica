@@ -1,9 +1,5 @@
 import React, { Component } from "react";
 import MainBanner from "./MainBanner";
-import Packages from "./Packages";
-import Destinations from "./Destinations";
-import Blog from "./Blog";
-import Features from "./Features";
 import Review from "./Review";
 import Achievement from "./Achievement";
 

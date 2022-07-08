@@ -5,10 +5,12 @@ import axios from "axios";
 import Select from "react-select";
 
 import { updateUtilizador, retrieveUtilizadores } from "../../../conection/utilizadores/actions";
+import { createLog } from "../../../conection/logs/actions";
 
 import { Redirect, Link } from "react-router-dom";
 
 import UtilizadoresService from "../../../conection/utilizadores/utilizadoresService";
+import { retrieveProfile } from "../../../conection/profile/actions";
 
 class EditUtilizador extends Component {
   constructor(props) {
@@ -21,6 +23,7 @@ class EditUtilizador extends Component {
     this.onChangeConfirmed = this.onChangeConfirmed.bind(this);
     this.onChangeBlocked = this.onChangeBlocked.bind(this);
     this.handleChangeRole = this.handleChangeRole.bind(this);
+    this.saveLog = this.saveLog.bind(this);
 
     this.saveUtilizador = this.saveUtilizador.bind(this);
 
@@ -74,6 +77,7 @@ class EditUtilizador extends Component {
           role: role,
         },
         name: name,
+        user: null,
       };
     });
   }
@@ -83,6 +87,8 @@ class EditUtilizador extends Component {
   componentDidMount() {
     this.getUtilizador(window.location.pathname.replace("/edit-utilizador/", ""));
     this.getOptionsRole();
+    this.props.retrieveProfile();
+
   }
 
   onChangeUsername(e) {
@@ -182,10 +188,26 @@ class EditUtilizador extends Component {
           redirect: true,
         });
       });
+      this.saveLog();
+
+  }
+
+  async saveLog() {
+    const data = new Date();
+    //+1 dia porque o strapi remove 1 dia bug da verção do strapi
+    data.setDate(data.getDate() + 1);
+    const tipo = "Atualizar utilizador";
+    const user = this.props.user.id;
+    console.log(this.state);
+
+    this.props
+      .createLog(data, tipo, user)
+      .catch((err) => console.log(err.response));
   }
 
   render() {
     const { redirect, currentUtilizador } = this.state;
+    const { user } = this.props;
 
     if (redirect) {
       return <Redirect to="/list-utilizadores" />;
@@ -326,6 +348,7 @@ const mapStateToProps = (state) => ({
   user: state.users,
 });
 
-export default connect(mapStateToProps, {retrieveUtilizadores, updateUtilizador })(
+export default connect(mapStateToProps, {retrieveUtilizadores, updateUtilizador,createLog,   retrieveProfile,
+})(
   EditUtilizador
 );

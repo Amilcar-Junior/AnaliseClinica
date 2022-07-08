@@ -35,9 +35,8 @@ class AboutWrapper extends Component {
                        </div>
                        <div className="col-lg-5 col-md-12">
                            <div className="about-wrapper-right section-head head-left">
-                               <h5>About TourX</h5>
-                               <h2>The Best Travel Agency
-                                   Company.</h2>
+                               <h5>Sobre Health 360</h5>
+                               <h2>A melhor e maior compania de Análises Clinicas</h2>
                                <p>Uma solução integrada e completa para as necessidades da gestão da saúde de municípios, clínicas, hospitais, unidades básicas e outras unidades de saúde</p>
                                <ul className="about-list">
                                    <li><i className="flaticon-double-checking" /> Anatomia Patológica</li>
@@ -57,7 +56,7 @@ class AboutWrapper extends Component {
            </div>
 
            <React.Fragment>
-               <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="-tJYN-eG1zk" onClose={() => this.setState({ isOpen: false })} />
+               <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="oCMfewM7weM" onClose={() => this.setState({ isOpen: false })} />
            </React.Fragment>
 
            {/* ===============  About wrapper area end =============== */}

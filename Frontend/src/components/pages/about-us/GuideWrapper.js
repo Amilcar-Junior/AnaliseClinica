@@ -47,8 +47,8 @@ class GuideWrapper extends Component {
                    <div className="row">
                        <div className="col-lg-12 col-md-12 col-sm-12">
                            <div className="section-head head-center pb-40">
-                               <h5>Tour Guide</h5>
-                               <h2>All Guide Are 5 Year Expart In Travel</h2>
+                               <h5>Health 360</h5>
+                               <h2>Funcionarios de confiança para garantir sua segurança!</h2>
                            </div>
                        </div>
                    </div>

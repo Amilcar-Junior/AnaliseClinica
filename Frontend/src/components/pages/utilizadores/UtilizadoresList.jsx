@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import { Link } from "react-router-dom";
+import { createLog } from "../../../conection/logs/actions";
 
 import {
   retrieveUtilizadores,
@@ -18,6 +19,7 @@ class UtilizadoresList extends Component {
   constructor(props) {
     super(props);
     this.handleSetItens = this.handleSetItens.bind(this);
+    this.saveLog = this.saveLog.bind(this);
 
     this.state = {
       user: null,
@@ -43,8 +45,22 @@ class UtilizadoresList extends Component {
   removeUtilizador = (id) => {
     this.props.deleteUtilizador(id).then(() => {
       this.props.retrieveUtilizadores();
+      this.saveLog()
     });
   };
+
+  async saveLog() {
+    const data = new Date();
+    //+1 dia porque o strapi remove 1 dia bug da verção do strapi
+    data.setDate(data.getDate() + 1);
+    const tipo = "Eliminar utilizador";
+    const user = this.state.user.id;
+    console.log(this.state);
+
+    this.props
+      .createLog(data, tipo, user)
+      .catch((err) => console.log(err.response));
+  }
 
   render() {
     const { currentItens } = this.state;
@@ -229,5 +245,5 @@ const mapStateToProps = (state) => {
 
 export default connect(mapStateToProps, {
   retrieveUtilizadores,
-  deleteUtilizador, retrieveProfile
+  deleteUtilizador, retrieveProfile,createLog
 })(UtilizadoresList);

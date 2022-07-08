@@ -250,6 +250,17 @@ class Headers extends Component {
                         </ul>
                       </li>
                       )}
+                      {user && user.role.id === 3 && (
+                      <li>
+                        <NavLink
+                          activeClassName="active"
+                          to={`${process.env.PUBLIC_URL}/list-log`}
+                          onClick={this.scrollTop}
+                        >
+                          Logs
+                        </NavLink>
+                      </li>
+                      )}
                       {/* <li>
                         <NavLink
                           activeClassName="active"

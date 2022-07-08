@@ -35,14 +35,12 @@ export const createTeste =
 
             });
 
-            toast.success('Teste adicionado com sucesso!');
-            return Promise.resolve(res.data);
-            alert("a")
+/*             toast.success('Teste adicionado com sucesso!');
+ */            return Promise.resolve(res.data);
         } catch (err) {
 
-            toast.error('Teste não adicionado!')
-            return Promise.reject(err);
-            alert("a")
+/*             toast.error('Teste não adicionado!')
+ */            return Promise.reject(err);
 
         }
 
@@ -64,8 +62,8 @@ export const retrieveTestes = () => async (dispatch) => {
 
     } catch (err) {
 
-        toast.error('Teste não encontrado!');
-        console.log(err);
+/*         toast.error('Teste não encontrado!');
+ */        console.log(err);
 
     }
 
@@ -85,12 +83,12 @@ export const updateTeste = (id, data) => async (dispatch) => {
 
         });
 
-        toast.success('Teste foi alterado com sucesso!')
-        return Promise.resolve(res.data);
+/*         toast.success('Teste foi alterado com sucesso!')
+ */        return Promise.resolve(res.data);
 
     } catch (err) {
-        toast.error('Teste não foi alterado!')
-        return Promise.reject(err);
+/*         toast.error('Teste não foi alterado!')
+ */        return Promise.reject(err);
 
     }
 
@@ -110,12 +108,12 @@ export const deleteTeste = (id) => async (dispatch) => {
 
         });
 
-        toast.success('Teste Deletado com sucesso!')
-
+/*         toast.success('Teste Deletado com sucesso!')
+ */
     } catch (err) {
 
-        toast.error('Teste não foi Deletado!')
-        console.log(err);
+/*         toast.error('Teste não foi Deletado!')
+ */        console.log(err);
 
     }
 

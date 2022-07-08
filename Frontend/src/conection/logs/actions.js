@@ -35,13 +35,13 @@ export const createLog =
 
             });
 
-            toast.success('Log adicionado com sucesso!');
-            return Promise.resolve(res.data);
+/*             toast.success('Log adicionado com sucesso!');
+ */            return Promise.resolve(res.data);
             
         } catch (err) {
 
-            toast.error('Log não adicionado!')
-            return Promise.reject(err);
+/*             toast.error('Log não adicionado!')
+ */            return Promise.reject(err);
             
 
         }
@@ -64,8 +64,8 @@ export const retrieveLogs = () => async (dispatch) => {
 
     } catch (err) {
 
-        toast.error('Log não encontrado!');
-        console.log(err);
+/*         toast.error('Log não encontrado!');
+ */        console.log(err);
 
     }
 
@@ -85,12 +85,12 @@ export const updateLog = (id, data) => async (dispatch) => {
 
         });
 
-        toast.success('Log foi alterado com sucesso!')
-        return Promise.resolve(res.data);
+/*         toast.success('Log foi alterado com sucesso!')
+ */        return Promise.resolve(res.data);
 
     } catch (err) {
-        toast.error('Log não foi alterado!')
-        return Promise.reject(err);
+/*         toast.error('Log não foi alterado!')
+ */        return Promise.reject(err);
 
     }
 
@@ -110,12 +110,12 @@ export const deleteLog = (id) => async (dispatch) => {
 
         });
 
-        toast.success('Log Deletado com sucesso!')
-
+/*         toast.success('Log Deletado com sucesso!')
+ */
     } catch (err) {
 
-        toast.error('Log não foi Deletado!')
-        console.log(err);
+/*         toast.error('Log não foi Deletado!')
+ */        console.log(err);
 
     }
 

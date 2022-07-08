@@ -56,8 +56,8 @@ class Review extends Component {
                    <div className="row">
                        <div className="col-lg-12 col-md-12 col-sm-12">
                            <div className="section-head pb-40">
-                               <h5>Our Traveller Say</h5>
-                               <h2>What Oue Traveller Say About Us</h2>
+                               <h5>Sobre Nós</h5>
+                               <h2>Oque outros pacientes falam</h2>
                            </div>
                        </div>
                    </div>

@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   /**
-   * Trigger a backup at 04:00 every day
+   * Trigger a backup at 10:00 every day
    */
   "0 10 * * *": async () => {
     console.log("Starting backup from cron...");

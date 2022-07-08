@@ -108,7 +108,7 @@ class AddPaciente extends Component {
     const data = new Date();
     //+1 dia porque o strapi remove 1 dia bug da verção do strapi
     data.setDate(data.getDate() + 1);
-    const tipo = "adicionar paciente";
+    const tipo = "Adicionar paciente";
     const user = this.state.user.id;
     console.log(this.state);
 

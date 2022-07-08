@@ -15,11 +15,13 @@ import { ExportCSV } from "../../ExportEx/ExportCSV";
 import moment from "moment";
 
 import PaginatedItems from "../../pagination/Paginate";
+import { createLog } from "../../../conection/logs/actions";
 
 class ListRecolha extends Component {
   constructor(props) {
     super(props);
     this.handleSetItens = this.handleSetItens.bind(this);
+    this.saveLog = this.saveLog.bind(this);
 
     this.state = {
       currentItens: null,
@@ -46,10 +48,24 @@ class ListRecolha extends Component {
   removeRecolha = (id) => {
     this.props.deleteRecolha(id).then(() => {
       this.props.retrieveRecolhas();
-
+      this.saveLog()
       // this.handleModalOpen();
     });
   };
+
+  async saveLog() {
+    const data = new Date();
+    //+1 dia porque o strapi remove 1 dia bug da verção do strapi
+    data.setDate(data.getDate() + 1);
+    const tipo = "Remover recolha";
+    const user = this.state.user.id;
+    console.log(this.state);
+
+    this.props
+      .createLog(data, tipo, user)
+      .catch((err) => console.log(err.response));
+  }
+
 
   render() {
     const { currentItens } = this.state;
@@ -76,14 +92,14 @@ class ListRecolha extends Component {
               </h3>
 
               <div className="row mt-4">
-                {user && (user.role.id === 3 || user.role.id === 4) && (
+                {user.role && (user.role.id === 3 || user.role.id === 5) && (
                   <div className="col-lg-4">
                     <Link to="/add-recolha" className="btn btn-success">
                       <i class="fas fa-plus" /> Adicionar
                     </Link>
                   </div>
                 )}
-                <div className="col-lg-4 center">
+                <div className="col-lg-4">
                   <ExportCSV csvData={this.props.recolhas} fileName="Recolha" />
                 </div>
               </div>
@@ -141,7 +157,7 @@ class ListRecolha extends Component {
                                     </div>
                                     {user &&
                                       (user.role.id === 3 ||
-                                        user.role.id === 4) && (
+                                        user.role.id === 5) && (
                                         <>
                                           <div className="col-xs-6 col-md-4 text-center">
                                             <Link
@@ -196,4 +212,5 @@ export default connect(mapStateToProps, {
   retrieveRecolhas,
   deleteRecolha,
   retrieveProfile,
+  createLog,
 })(ListRecolha);

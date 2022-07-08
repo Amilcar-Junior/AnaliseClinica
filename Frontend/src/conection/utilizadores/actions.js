@@ -52,13 +52,13 @@ import {
    
         });
    
-        toast.success('Utilizador foi adicionado com sucesso!');
-        return Promise.resolve(res.data);
+/*         toast.success('Utilizador foi adicionado com sucesso!');
+ */        return Promise.resolve(res.data);
 
       } catch (err) {
         
-        toast.error('Utilizador não adicionado!')
-
+/*         toast.error('Utilizador não adicionado!')
+ */
         return Promise.reject(err);
 
       }
@@ -80,8 +80,8 @@ import {
    
     } catch (err) {
 
-      toast.error('Utilizadores não encontrado!');
-
+/*       toast.error('Utilizadores não encontrado!');
+ */
       console.log(err);
 
     }
@@ -102,12 +102,12 @@ import {
    
       });
    
-      toast.success('Utilizador foi alterado com sucesso!')
-    return Promise.resolve(res.data);
+/*       toast.success('Utilizador foi alterado com sucesso!')
+ */    return Promise.resolve(res.data);
 
   } catch (err) {
-    toast.error('Utilizador não foi alterado!')
-
+/*     toast.error('Utilizador não foi alterado!')
+ */
     return Promise.reject(err);
 
   }
@@ -128,11 +128,11 @@ import {
    
       });
    
-      toast.success('Utilizador eliminado com sucesso!')
-
+/*       toast.success('Utilizador eliminado com sucesso!')
+ */
     } catch (err) {
-      toast.error('Utilizador não foi eliminado!')
-  
+/*       toast.error('Utilizador não foi eliminado!')
+ */  
       console.log(err);
   
     }

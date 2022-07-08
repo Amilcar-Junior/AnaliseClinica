@@ -144,13 +144,11 @@ export const createResultado =
         payload: res.data,
       });
 
-      toast.success("Resultado adicionado com sucesso!");
-      return Promise.resolve(res.data);
-      alert("a");
+/*       toast.success("Resultado adicionado com sucesso!");
+ */      return Promise.resolve(res.data);
     } catch (err) {
-      toast.error("Resultado não adicionado!");
-      return Promise.reject(err);
-      alert("a");
+/*       toast.error("Resultado não adicionado!");
+ */      return Promise.reject(err);
     }
   };
 
@@ -164,8 +162,8 @@ export const retrieveResultados = () => async (dispatch) => {
       payload: res.data,
     });
   } catch (err) {
-    toast.error("Resultado não encontrado!");
-    console.log(err);
+/*     toast.error("Resultado não encontrado!");
+ */    console.log(err);
   }
 };
 
@@ -179,11 +177,11 @@ export const updateResultado = (id, data) => async (dispatch) => {
       payload: res.data,
     });
 
-    toast.success("Resultado foi alterado com sucesso!");
-    return Promise.resolve(res.data);
+/*     toast.success("Resultado foi alterado com sucesso!");
+ */    return Promise.resolve(res.data);
   } catch (err) {
-    toast.error("Resultado não foi alterado!");
-    return Promise.reject(err);
+/*     toast.error("Resultado não foi alterado!");
+ */    return Promise.reject(err);
   }
 };
 
@@ -197,9 +195,9 @@ export const deleteResultado = (id) => async (dispatch) => {
       payload: { id },
     });
 
-    toast.success("Resultado Deletado com sucesso!");
-  } catch (err) {
-    toast.error("Resultado não foi Deletado!");
-    console.log(err);
+/*     toast.success("Resultado Deletado com sucesso!");
+ */  } catch (err) {
+/*     toast.error("Resultado não foi Deletado!");
+ */    console.log(err);
   }
 };

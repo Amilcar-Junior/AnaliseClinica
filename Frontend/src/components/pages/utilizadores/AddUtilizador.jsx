@@ -5,9 +5,11 @@ import axios from "axios";
 import { connect } from "react-redux";
 
 import Select from "react-select";
+import { createLog } from "../../../conection/logs/actions";
 
 import { createUtilizador } from "../../../conection/utilizadores/actions";
 import { Redirect, Link } from "react-router-dom";
+import { retrieveProfile } from "../../../conection/profile/actions";
 
 class AddUtilizador extends Component {
   constructor(props) {
@@ -21,6 +23,7 @@ class AddUtilizador extends Component {
     this.onChangeBlocked = this.onChangeBlocked.bind(this);
     this.handleChangeRole = this.handleChangeRole.bind(this);
     this.saveUtilizador = this.saveUtilizador.bind(this);
+    this.saveLog = this.saveLog.bind(this);
 
     this.state = {
       username: "",
@@ -64,6 +67,8 @@ class AddUtilizador extends Component {
 
   componentDidMount() {
     this.getOptionsRole();
+    this.props.retrieveProfile();
+
   }
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.user !== this.props.user) {
@@ -152,7 +157,22 @@ class AddUtilizador extends Component {
           endereco: "",
           especialidade: "",
         });
+        this.saveLog()
+
       })
+      .catch((err) => console.log(err.response));
+  }
+
+  async saveLog() {
+    const data = new Date();
+    //+1 dia porque o strapi remove 1 dia bug da verção do strapi
+    data.setDate(data.getDate() + 1);
+    const tipo = "Adicionar utilizador";
+    const user = this.state.user.id;
+    console.log(this.state);
+
+    this.props
+      .createLog(data, tipo, user)
       .catch((err) => console.log(err.response));
   }
 
@@ -293,6 +313,6 @@ const mapStateToProps = (state) => ({
   user: state.users,
 });
 
-export default connect(mapStateToProps, { createUtilizador })(
+export default connect(mapStateToProps, { createUtilizador,createLog,retrieveProfile })(
   AddUtilizador
 );

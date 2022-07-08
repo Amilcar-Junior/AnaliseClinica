@@ -35,13 +35,13 @@ export const createPaciente =
 
             });
 
-            toast.success('Paciente adicionado com sucesso!');
-            return Promise.resolve(res.data);
+/*             toast.success('Paciente adicionado com sucesso!');
+ */            return Promise.resolve(res.data);
 
         } catch (err) {
 
-            toast.error('Paciente não adicionado!')
-            return Promise.reject(err);
+/*             toast.error('Paciente não adicionado!')
+ */            return Promise.reject(err);
 
         }
 
@@ -63,8 +63,8 @@ export const retrievePacientes = () => async (dispatch) => {
 
     } catch (err) {
 
-        toast.error('Paciente não encontrado!');
-        console.log(err);
+/*         toast.error('Paciente não encontrado!');
+ */        console.log(err);
 
     }
 
@@ -84,12 +84,12 @@ export const updatePaciente = (id, data) => async (dispatch) => {
 
         });
 
-        toast.success('Paciente foi alterado com sucesso!')
-        return Promise.resolve(res.data);
+/*         toast.success('Paciente foi alterado com sucesso!')
+ */        return Promise.resolve(res.data);
 
     } catch (err) {
-        toast.error('Paciente não foi alterado!')
-        return Promise.reject(err);
+/*         toast.error('Paciente não foi alterado!')
+ */        return Promise.reject(err);
 
     }
 
@@ -109,13 +109,12 @@ export const deletePaciente = (id) => async (dispatch) => {
 
         });
 
-        toast.success('Paciente Deletado com sucesso!')
-
+/*         toast.success('Paciente Deletado com sucesso!')
+ */
     } catch (err) {
 
-        toast.error('Paciente não foi Deletado!', {position: toast.POSITION.TOP_LEFT})
-        console.log(err);
-        alert("Eu sou um alert!");
+/*         toast.error('Paciente não foi Deletado!', {position: toast.POSITION.TOP_LEFT})
+ */        console.log(err);
     }
 
 };
